@@ -1,0 +1,12 @@
+AllCops:
+  Include:
+    - Gemfile
+    - Guardfile
+    - Rakefile
+    - barge.gemspec
+
+Documentation:
+  Enabled: false
+
+Encoding:
+  Enabled: false

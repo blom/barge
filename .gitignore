@@ -1,0 +1,7 @@
+/.bundle
+/.rbx
+/.yardoc
+/Gemfile.lock
+/coverage
+/dist
+/doc

@@ -62,7 +62,7 @@ barge.droplet.all
 ``` ruby
 droplet = barge.droplet.find(droplet_id)
 droplet.properties # all
-droplet[:name]     # droplet's name
+droplet.name       # droplet's name
 ```
 
 ##### Destroy droplet

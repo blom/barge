@@ -4,6 +4,7 @@ if ENV['SIMPLECOV']
 end
 
 require_relative '../lib/barge'
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
 require 'webmock/rspec'
 

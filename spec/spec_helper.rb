@@ -9,5 +9,5 @@ Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 require 'webmock/rspec'
 
 RSpec.configure do |config|
-  config
+  config.include SpecHelpers
 end

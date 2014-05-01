@@ -3,5 +3,5 @@
 /.yardoc
 /Gemfile.lock
 /coverage
-/dist
 /doc
+/pkg

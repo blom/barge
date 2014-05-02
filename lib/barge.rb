@@ -1,4 +1,5 @@
 require 'hashie'
+require 'json'
 
 require 'barge/client'
 require 'barge/resource'

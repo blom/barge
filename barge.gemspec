@@ -14,4 +14,5 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 1.9.2'
 
   spec.add_dependency 'faraday', '~> 0.9.0'
+  spec.add_dependency 'hashie',  '~> 2.1.1'
 end

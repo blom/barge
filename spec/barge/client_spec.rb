@@ -13,5 +13,12 @@ describe Barge::Client do
       barge = described_class.new { |c| c.access_token = token }
       expect(barge.access_token).to eq(token)
     end
+
+    context 'when none is given' do
+      specify do
+        expect { described_class.new }
+          .to raise_error(ArgumentError, 'missing access_token')
+      end
+    end
   end
 end

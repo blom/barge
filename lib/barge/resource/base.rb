@@ -6,6 +6,12 @@ module Barge
       def initialize(faraday)
         @faraday = faraday
       end
+
+      private
+
+      def request(verb, *args)
+        Hashie::Mash.new JSON.parse(faraday.public_send(verb, *args).body)
+      end
     end
   end
 end

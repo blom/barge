@@ -1,10 +1,8 @@
 require 'spec_helper'
 
 describe Barge::Resource::Droplet do
+  include_context 'resource'
   it_behaves_like 'a resource'
-
-  let(:barge) { Barge::Client.new(access_token: 'some_token') }
-  let(:droplet) { barge.droplet }
 
   describe '#show' do
     it 'returns information about a specific droplet' do

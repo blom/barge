@@ -9,6 +9,7 @@ module Barge
 
     DEFAULT_OPTIONS = {}
     DIGITAL_OCEAN_URL = 'https://api.digitalocean.com'
+    TIMEOUTS = 10
 
     def initialize(options = DEFAULT_OPTIONS)
       self.access_token = options.fetch(:access_token, nil)
@@ -28,6 +29,9 @@ module Barge
         f.adapter :net_http
         f.request :url_encoded
         f.response :json
+
+        f.options.open_timeout = TIMEOUTS
+        f.options.timeout = TIMEOUTS
       end
     end
 

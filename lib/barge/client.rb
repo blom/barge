@@ -27,6 +27,7 @@ module Barge
       @faraday ||= Faraday.new faraday_options do |f|
         f.adapter :net_http
         f.request :url_encoded
+        f.response :json
       end
     end
 

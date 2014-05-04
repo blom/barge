@@ -10,7 +10,7 @@ module Barge
       private
 
       def request(verb, *args)
-        Hashie::Mash.new JSON.parse(faraday.public_send(verb, *args).body)
+        Hashie::Mash.new faraday.public_send(verb, *args).body
       end
     end
   end

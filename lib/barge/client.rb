@@ -26,6 +26,8 @@ module Barge
 
     def faraday
       @faraday ||= Faraday.new faraday_options do |f|
+        f.use FaradayMiddleware::FollowRedirects
+
         f.adapter :net_http
         f.request :url_encoded
         f.response :json

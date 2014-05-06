@@ -1,17 +1,41 @@
 {
-    "droplet": {
-        "backups": [],
-        "backups_active": false,
-        "id": 100823,
-        "image_id": 420,
-        "ip_address": "127.0.0.1",
-        "locked": false,
-        "name": "test222",
-        "private_ip_address": null,
-        "region_id": 1,
-        "size_id": 33,
-        "snapshots": [],
-        "status": "active"
+    "backups": [
+        {
+            "id": 32,
+            "name": "Backup taken 2014-01-01 12:00:00"
+        }
+    ],
+    "id": 32,
+    "image": {
+        "distribution": "Ubuntu",
+        "id": 32,
+        "name": "Ubuntu 12.10 x32",
+        "public": true,
+        "slug": "ubuntu-12.10-x32"
     },
-    "status": "OK"
+    "locked": false,
+    "name": "my droplet",
+    "networks": {
+        "public": {
+            "gateway": "162.243.68.1",
+            "ip_address": "162.243.68.122",
+            "netmask": "255.255.255.0"
+        }
+    },
+    "region": "nyc2",
+    "size": {
+        "cpus": 1,
+        "disk": "20gb",
+        "memory": "512mb",
+        "price_hourly": "0.007",
+        "price_monthly": "5.00",
+        "transfer": "1tb"
+    },
+    "snapshots": [
+        {
+            "id": 32,
+            "name": "My snapshot"
+        }
+    ],
+    "status": "active"
 }

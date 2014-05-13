@@ -29,72 +29,124 @@ end
 ```
 
 Resources
----------
+=========
 
-### Droplet
+General
+-------
 
-You can also call e.g. `#destroy` below directly by providing a droplet id:
+### Hashie::Mash
+
+[Hashie::Mash](https://github.com/intridea/hashie) is used so that attributes
+can be accessed using dot notation:
 
 ``` ruby
-barge.droplet.destroy(droplet_id)
+droplet = barge.droplet.show(droplet_id)
+droplet.name       # => "foo"
+droplet.image.id   # => 123
+droplet.size!.cpus # => 1
 ```
 
-##### Create droplet
+Notice that `size!` and not `size` was used. This is because `size` already is
+a method, and Hashie::Mash will not override it. You can also use square
+brackets:
+
+``` ruby
+droplet[:size][:cpus]   # => 1
+droplet['size']['cpus'] # => 1
+```
+
+### success?
+
+You can use `success?` to check if a successful HTTP status code was returned:
+
+``` ruby
+barge.droplet.create(options).success? # => true
+```
+
+Droplet
+-------
+
+### Create droplet
 
 ``` ruby
 barge.droplet.create(options)
 ```
 
-##### Show all droplets
+### Destroy droplet
+
+``` ruby
+barge.droplet.destroy(droplet_id)
+```
+
+### Show droplet
+
+``` ruby
+barge.droplet.show(droplet_id)
+```
+
+### Show all droplets
 
 ``` ruby
 barge.droplet.all
 ```
 
-##### Find droplet
+### Update droplet
 
 ``` ruby
- barge.droplet.find(droplet_id)
+barge.droplet.update(droplet_id, options)
 ```
 
-##### Show droplet properties
+### Reboot droplet
 
 ``` ruby
-droplet = barge.droplet.find(droplet_id)
-droplet.properties # all
-droplet.name       # droplet's name
+barge.droplet.reboot(droplet_id)
 ```
 
-##### Destroy droplet
+### Power cycle droplet
 
 ``` ruby
-droplet = barge.droplet.find(droplet_id)
-droplet.destroy
+barge.droplet.power_cycle(droplet_id)
 ```
 
-##### Rename droplet
+### Shutdown droplet
 
 ``` ruby
-droplet = barge.droplet.find(droplet_id)
-droplet.rename('new_name')
+barge.droplet.shutdown(droplet_id)
 ```
 
-### Image
+### Power off droplet
+
+``` ruby
+barge.droplet.power_off(droplet_id)
+```
+
+### Power on droplet
+
+``` ruby
+barge.droplet.power_on(droplet_id)
+```
+
+Image
+-----
 
 Coming.
 
-### Domain
+Domain
+------
 
 Coming.
 
-### Key
+Key
+---
 
 Coming.
 
-### Region
+Region
+------
 
 Coming.
 
-### Size
+Size
+----
 
 Coming.

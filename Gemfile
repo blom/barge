@@ -5,7 +5,7 @@ gem 'rake'
 gem 'rspec', '~> 3.0.0.beta2'
 gem 'rubocop'
 gem 'simplecov'
-gem 'webmock'
+gem 'webmock', require: false
 gem 'yard'
 
 if RUBY_VERSION.to_f >= 2

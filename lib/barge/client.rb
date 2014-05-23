@@ -41,7 +41,7 @@ module Barge
 
     def faraday_options
       {
-        headers: { authorization: access_token },
+        headers: { authorization: "Bearer #{access_token}" },
         url: DIGITAL_OCEAN_URL
       }
     end

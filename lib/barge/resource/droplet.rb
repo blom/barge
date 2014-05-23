@@ -4,7 +4,7 @@ module Barge
       include Resource::Base
 
       def show(droplet_id)
-        request(:get, "/droplets/#{droplet_id}")
+        request(:get, "droplets/#{droplet_id}")
       end
     end
   end

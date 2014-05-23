@@ -8,7 +8,7 @@ module Barge
     attr_reader :droplet
 
     DEFAULT_OPTIONS = {}
-    DIGITAL_OCEAN_URL = 'https://api.digitalocean.com'
+    DIGITAL_OCEAN_URL = 'https://api.digitalocean.com/v2'
     TIMEOUTS = 10
 
     def initialize(options = DEFAULT_OPTIONS)

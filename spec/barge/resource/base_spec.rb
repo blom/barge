@@ -6,7 +6,7 @@ module Barge
       include Barge::Resource::Base
 
       def dummy
-        request(:get, '/dummy')
+        request(:get, 'dummy')
       end
     end
   end

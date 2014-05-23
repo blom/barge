@@ -10,6 +10,13 @@ require 'webmock/rspec'
 
 RSpec.configure do |config|
   config.include SpecHelpers
-  config.expect_with(:rspec) { |c| c.syntax = :expect }
   config.raise_errors_for_deprecations!
+
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
+  config.mock_with :rspec do |c|
+    c.syntax = :expect
+  end
 end

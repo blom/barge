@@ -1,0 +1,44 @@
+[
+    {
+        "backups": [],
+        "id": 2,
+        "image": {
+            "distribution": "ubuntu",
+            "id": 119192817,
+            "name": "Ubuntu 13.04",
+            "public": true,
+            "regions": [
+                "nyc1"
+            ],
+            "slug": "ubuntu1304"
+        },
+        "locked": false,
+        "name": "test.example.com",
+        "networks": [],
+        "region": {
+            "available": true,
+            "name": "New York",
+            "sizes": [
+                "1024mb",
+                "512mb"
+            ],
+            "slug": "nyc1"
+        },
+        "size": {
+            "disk": 20,
+            "memory": 512,
+            "price_hourly": "0.00744",
+            "price_monthly": "5.0",
+            "regions": [
+                "nyc1",
+                "sfo1",
+                "ams4"
+            ],
+            "slug": "512mb",
+            "transfer": null,
+            "vcpus": 1
+        },
+        "snapshots": [],
+        "status": "active"
+    }
+]

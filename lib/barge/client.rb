@@ -28,7 +28,8 @@ module Barge
       @faraday ||= Faraday.new faraday_options do |f|
         f.adapter :net_http
 
-        f.request :url_encoded
+        f.headers['Content-Type'] = 'application/json'
+        f.request :json
 
         f.response :follow_redirects
         f.response :mashify

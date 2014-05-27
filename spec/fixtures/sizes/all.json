@@ -1,0 +1,30 @@
+[
+    {
+        "disk": 20,
+        "memory": 512,
+        "price_hourly": "0.00744",
+        "price_monthly": "5.0",
+        "regions": [
+            "nyc1",
+            "sfo1",
+            "ams4"
+        ],
+        "slug": "512mb",
+        "transfer": null,
+        "vcpus": 1
+    },
+    {
+        "disk": 30,
+        "memory": 1024,
+        "price_hourly": "0.01488",
+        "price_monthly": "10.0",
+        "regions": [
+            "nyc1",
+            "sfo1",
+            "ams4"
+        ],
+        "slug": "1024mb",
+        "transfer": null,
+        "vcpus": 2
+    }
+]

@@ -168,9 +168,17 @@ Coming.
 Region
 ------
 
-Coming.
+### Show all regions
+
+``` ruby
+barge.region.all
+```
 
 Size
 ----
 
-Coming.
+### Show all sizes
+
+``` ruby
+barge.size.all
+```

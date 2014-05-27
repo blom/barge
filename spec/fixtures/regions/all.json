@@ -1,0 +1,26 @@
+[
+    {
+        "available": false,
+        "name": "New York",
+        "sizes": [],
+        "slug": "nyc1"
+    },
+    {
+        "available": true,
+        "name": "San Francisco",
+        "sizes": [
+            "1024mb",
+            "512mb"
+        ],
+        "slug": "sfo1"
+    },
+    {
+        "available": true,
+        "name": "Amsterdam",
+        "sizes": [
+            "1024mb",
+            "512mb"
+        ],
+        "slug": "ams4"
+    }
+]

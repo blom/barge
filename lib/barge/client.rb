@@ -6,6 +6,8 @@ module Barge
     attr_accessor :access_token
 
     attr_reader :droplet
+    attr_reader :region
+    attr_reader :size
 
     DEFAULT_OPTIONS = {}
     DIGITAL_OCEAN_URL = 'https://api.digitalocean.com/v2'
@@ -22,6 +24,8 @@ module Barge
 
     def initialize_resources
       @droplet = Resource::Droplet.new(faraday)
+      @region  = Resource::Region.new(faraday)
+      @size    = Resource::Size.new(faraday)
     end
 
     def faraday

@@ -47,12 +47,12 @@ module Barge
         action(droplet_id, __method__, size: size)
       end
 
-      def rebuild(droplet_id, image)
-        action(droplet_id, __method__, image: image)
+      def rebuild(droplet_id, image_id)
+        action(droplet_id, __method__, image: image_id)
       end
 
-      def restore(droplet_id, image)
-        action(droplet_id, __method__, image: image)
+      def restore(droplet_id, image_id)
+        action(droplet_id, __method__, image: image_id)
       end
 
       def password_reset(droplet_id)

@@ -27,6 +27,10 @@ module Barge
         action(droplet_id, __method__)
       end
 
+      def shutdown(droplet_id)
+        action(droplet_id, __method__)
+      end
+
       def power_off(droplet_id)
         action(droplet_id, __method__)
       end
@@ -49,10 +53,6 @@ module Barge
 
       def restore(droplet_id, image)
         action(droplet_id, __method__, image: image)
-      end
-
-      def shutdown(droplet_id)
-        action(droplet_id, __method__)
       end
 
       def password_reset(droplet_id)

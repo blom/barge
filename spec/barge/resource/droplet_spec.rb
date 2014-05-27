@@ -64,6 +64,17 @@ describe Barge::Resource::Droplet do
     end
   end
 
+  describe '#shutdown' do
+    it 'shuts down a droplet' do
+      stubbed_request = stub_request!(:post, '/droplets/20/actions')
+        .to_return(body: fixture('droplets/shutdown'), status: 200)
+      expect(droplet.shutdown(20).type).to eq 'shutdown'
+      expect(stubbed_request
+        .with(body: { type: :shutdown, params: { } }.to_json))
+        .to have_been_requested
+    end
+  end
+
   describe '#power_off' do
     it 'powers off a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/14/actions')
@@ -82,6 +93,17 @@ describe Barge::Resource::Droplet do
       expect(droplet.power_cycle(15).type).to eq 'power_cycle'
       expect(stubbed_request
         .with(body: { type: :power_cycle, params: {} }.to_json))
+        .to have_been_requested
+    end
+  end
+
+  describe '#power_on' do
+    it 'powers on a droplet' do
+      stubbed_request = stub_request!(:post, '/droplets/15/actions')
+        .to_return(body: fixture('droplets/power_on'), status: 200)
+      expect(droplet.power_on(15).type).to eq 'power_on'
+      expect(stubbed_request
+        .with(body: { type: :power_on, params: {} }.to_json))
         .to have_been_requested
     end
   end
@@ -115,17 +137,6 @@ describe Barge::Resource::Droplet do
       expect(droplet.restore(19, 101).type).to eq 'restore'
       expect(stubbed_request
         .with(body: { type: :restore, params: { image: 101 } }.to_json))
-        .to have_been_requested
-    end
-  end
-
-  describe '#shutdown' do
-    it 'shuts down a droplet' do
-      stubbed_request = stub_request!(:post, '/droplets/20/actions')
-        .to_return(body: fixture('droplets/shutdown'), status: 200)
-      expect(droplet.shutdown(20).type).to eq 'shutdown'
-      expect(stubbed_request
-        .with(body: { type: :shutdown, params: { } }.to_json))
         .to have_been_requested
     end
   end

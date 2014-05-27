@@ -70,7 +70,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/shutdown'), status: 200)
       expect(droplet.shutdown(20).type).to eq 'shutdown'
       expect(stubbed_request
-        .with(body: { type: :shutdown, params: { } }.to_json))
+        .with(body: { type: :shutdown, params: {} }.to_json))
         .to have_been_requested
     end
   end
@@ -147,7 +147,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/password_reset'), status: 200)
       expect(droplet.password_reset(21).type).to eq 'password_reset'
       expect(stubbed_request
-        .with(body: { type: :password_reset, params: { } }.to_json))
+        .with(body: { type: :password_reset, params: {} }.to_json))
         .to have_been_requested
     end
   end

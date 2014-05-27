@@ -72,10 +72,10 @@ Droplet
 barge.droplet.create(options)
 ```
 
-### Destroy droplet
+### Show all droplets
 
 ``` ruby
-barge.droplet.destroy(droplet_id)
+barge.droplet.all
 ```
 
 ### Show droplet
@@ -84,28 +84,22 @@ barge.droplet.destroy(droplet_id)
 barge.droplet.show(droplet_id)
 ```
 
-### Show all droplets
+### Destroy droplet
 
 ``` ruby
-barge.droplet.all
+barge.droplet.destroy(droplet_id)
 ```
 
-### Update droplet
+### Rename droplet
 
 ``` ruby
-barge.droplet.update(droplet_id, options)
+barge.droplet.rename(droplet_id, 'new name')
 ```
 
 ### Reboot droplet
 
 ``` ruby
 barge.droplet.reboot(droplet_id)
-```
-
-### Power cycle droplet
-
-``` ruby
-barge.droplet.power_cycle(droplet_id)
 ```
 
 ### Shutdown droplet
@@ -120,10 +114,40 @@ barge.droplet.shutdown(droplet_id)
 barge.droplet.power_off(droplet_id)
 ```
 
+### Power cycle droplet
+
+``` ruby
+barge.droplet.power_cycle(droplet_id)
+```
+
 ### Power on droplet
 
 ``` ruby
 barge.droplet.power_on(droplet_id)
+```
+
+### Resize droplet
+
+``` ruby
+barge.droplet.resize(droplet_id, 'size slug')
+```
+
+### Rebuild droplet
+
+``` ruby
+barge.droplet.rebuild(droplet_id, image_id)
+```
+
+### Restore droplet
+
+``` ruby
+barge.droplet.restore(droplet_id, image_id)
+```
+
+### Reset a droplet's password
+
+``` ruby
+barge.droplet.password_reset(droplet_id)
 ```
 
 Image

@@ -43,7 +43,7 @@ can be accessed using dot notation:
 droplet = barge.droplet.show(droplet_id)
 droplet.name       # => "foo"
 droplet.image.id   # => 123
-droplet.size!.cpus # => 1
+droplet.size!.vcpus # => 1
 ```
 
 Notice that `size!` and not `size` was used. This is because `size` already is
@@ -51,8 +51,8 @@ a method, and Hashie::Mash will not override it. You can also use square
 brackets:
 
 ``` ruby
-droplet[:size][:cpus]   # => 1
-droplet['size']['cpus'] # => 1
+droplet[:size][:vcpus]   # => 1
+droplet['size']['vcpus'] # => 1
 ```
 
 ### success?
@@ -71,6 +71,10 @@ Droplet
 ``` ruby
 barge.droplet.create(options)
 ```
+
+See the [API documentation][droplet-create] for options.
+
+[droplet-create]: https://github.com/digitaloceancloud/api-v2-docs#droplet-create-post
 
 ### Show all droplets
 
@@ -131,6 +135,8 @@ barge.droplet.power_on(droplet_id)
 ``` ruby
 barge.droplet.resize(droplet_id, 'size slug')
 ```
+
+Where *size slug* is for example `1024mb`.
 
 ### Rebuild droplet
 

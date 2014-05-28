@@ -41,8 +41,8 @@ can be accessed using dot notation:
 
 ``` ruby
 droplet = barge.droplet.show(droplet_id)
-droplet.name       # => "foo"
-droplet.image.id   # => 123
+droplet.name        # => "foo"
+droplet.image.id    # => 123
 droplet.size!.vcpus # => 1
 ```
 

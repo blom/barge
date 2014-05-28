@@ -159,7 +159,51 @@ barge.droplet.password_reset(droplet_id)
 Image
 -----
 
-Coming.
+### Show all images
+
+``` ruby
+barge.image.all
+```
+
+### Show image
+
+By ID:
+
+``` ruby
+barge.image.show(image_id)
+```
+
+By image slug (public images):
+
+``` ruby
+barge.image.show('image slug')
+```
+
+Where *image slug* is for example `ubuntu-13-10-x64`.
+
+### Update image
+
+``` ruby
+barge.image.update(image_id, options)
+```
+
+See the [API documentation][image-update] for options.
+
+[image-update]: https://github.com/digitaloceancloud/api-v2-docs#images-update-put
+
+### Destroy image
+
+``` ruby
+barge.image.destroy(image_id)
+```
+
+### Transfer image
+
+``` ruby
+barge.image.transfer(image_id, 'region slug')
+```
+
+Where *region slug* is for example `sfo1`.
 
 Domain
 ------

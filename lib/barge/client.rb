@@ -7,6 +7,7 @@ module Barge
 
     attr_reader :droplet
     attr_reader :image
+    attr_reader :key
     attr_reader :region
     attr_reader :size
 
@@ -26,6 +27,7 @@ module Barge
     def initialize_resources
       @droplet = Resource::Droplet.new(faraday)
       @image   = Resource::Image.new(faraday)
+      @key     = Resource::Key.new(faraday)
       @region  = Resource::Region.new(faraday)
       @size    = Resource::Size.new(faraday)
     end

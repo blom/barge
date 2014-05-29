@@ -213,7 +213,33 @@ Coming.
 Key
 ---
 
-Coming.
+### Create key
+
+``` ruby
+barge.key.create(options)
+```
+
+See the [API documentation][key-create] for options.
+
+[key-create]: https://github.com/digitaloceancloud/api-v2-docs#keys-create-post
+
+### Show all keys
+
+``` ruby
+barge.key.all
+```
+
+### Show key
+
+``` ruby
+barge.key.show(key_id_or_fingerprint)
+```
+
+### Destroy key
+
+``` ruby
+barge.key.destroy(key_id)
+```
 
 Region
 ------

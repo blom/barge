@@ -3,6 +3,7 @@ shared_context 'resource' do
 
   let(:droplet) { barge.droplet }
   let(:image) { barge.image }
+  let(:key) { barge.key }
   let(:region) { barge.region }
   let(:size) { barge.size }
 end

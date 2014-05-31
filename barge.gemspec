@@ -3,8 +3,8 @@ require File.expand_path '../lib/barge/version', __FILE__
 Gem::Specification.new do |spec|
   spec.name        = 'barge'
   spec.version     = Barge::Version
-  spec.summary     = 'Barge'
-  spec.description = 'Barge'
+  spec.summary     = 'Ruby library for DigitalOcean'
+  spec.description = "Ruby library for version 2 of DigitalOcean's API"
   spec.license     = 'MIT'
   spec.authors     = ['Ørjan Blom']
   spec.email       = %w(blom@blom.tv)

@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.summary     = 'Barge'
   spec.description = 'Barge'
   spec.license     = 'MIT'
-  spec.authors     = ['']
-  spec.email       = ''
+  spec.authors     = ['Ørjan Blom']
+  spec.email       = %w(blom@blom.tv)
   spec.homepage    = ''
   spec.files       = Dir['lib/**/*.rb', '[A-Z][A-Z]*']
 

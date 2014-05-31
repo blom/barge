@@ -4,19 +4,19 @@ module Barge
       include Resource::Base
 
       def create(options)
-        request(:post, 'droplets', options.to_json)
+        post('droplets', options.to_json)
       end
 
       def all
-        request(:get, 'droplets')
+        get('droplets')
       end
 
       def show(droplet_id)
-        request(:get, "droplets/#{droplet_id}")
+        get("droplets/#{droplet_id}")
       end
 
       def destroy(droplet_id)
-        request(:delete, "droplets/#{droplet_id}")
+        delete("droplets/#{droplet_id}")
       end
 
       def rename(droplet_id, name)
@@ -62,8 +62,8 @@ module Barge
       private
 
       def action(droplet_id, type, params = {})
-        request(:post, "droplets/#{droplet_id}/actions",
-                { type: type, params: params }.to_json)
+        post("droplets/#{droplet_id}/actions",
+             { type: type, params: params }.to_json)
       end
     end
   end

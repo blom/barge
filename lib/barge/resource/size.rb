@@ -4,7 +4,7 @@ module Barge
       include Resource::Base
 
       def all
-        request(:get, 'sizes')
+        get('sizes')
       end
     end
   end

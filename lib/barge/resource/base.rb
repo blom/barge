@@ -9,6 +9,12 @@ module Barge
 
       private
 
+      [:delete, :get, :head, :post, :put].each do |verb|
+        define_method verb do |*args|
+          request(__method__, *args)
+        end
+      end
+
       def request(verb, *args)
         response = faraday.public_send(verb, *args)
         response.body.tap do |r|

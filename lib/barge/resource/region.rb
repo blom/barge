@@ -4,7 +4,7 @@ module Barge
       include Resource::Base
 
       def all
-        request(:get, 'regions')
+        get('regions')
       end
     end
   end

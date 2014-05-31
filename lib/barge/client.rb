@@ -5,6 +5,7 @@ module Barge
   class Client
     attr_accessor :access_token
 
+    attr_reader :domain
     attr_reader :droplet
     attr_reader :image
     attr_reader :key
@@ -25,6 +26,7 @@ module Barge
     private
 
     def initialize_resources
+      @domain  = Resource::Domain.new(faraday)
       @droplet = Resource::Droplet.new(faraday)
       @image   = Resource::Image.new(faraday)
       @key     = Resource::Key.new(faraday)

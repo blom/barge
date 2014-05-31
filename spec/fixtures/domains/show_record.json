@@ -1,0 +1,9 @@
+{
+    "data": "@",
+    "id": 5,
+    "name": "example",
+    "port": null,
+    "priority": null,
+    "type": "CNAME",
+    "weight": null
+}

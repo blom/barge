@@ -208,7 +208,67 @@ Where *region slug* is for example `sfo1`.
 Domain
 ------
 
-Coming.
+### Create domain
+
+``` ruby
+barge.domain.create(options)
+```
+
+See the [API documentation][domain-create] for options.
+
+[domain-create]: https://github.com/digitaloceancloud/api-v2-docs#domain-records-create-post
+
+### Show all domains
+
+``` ruby
+barge.domain.all
+```
+
+### Show domain
+
+``` ruby
+barge.domain.show(domain_name)
+```
+
+### Destroy domain
+
+``` ruby
+barge.domain.destroy(domain_name)
+```
+
+### Create domain record
+
+``` ruby
+barge.domain.create_record(domain_name, options)
+```
+
+See the [API documentation][domain-create-record] for options.
+
+[domain-create-record]: https://github.com/digitaloceancloud/api-v2-docs#domain-records-create-post
+
+### Show all domain records
+
+``` ruby
+barge.domain.records
+```
+
+### Show domain record
+
+``` ruby
+barge.domain.show_record(domain_name, record_id)
+```
+
+### Update domain record
+
+``` ruby
+barge.domain.update_record(domain_name, record_id, options)
+```
+
+### Destroy domain record
+
+``` ruby
+barge.domain.destroy(domain_name, record_id)
+```
 
 Key
 ---

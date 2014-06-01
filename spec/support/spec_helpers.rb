@@ -5,6 +5,13 @@ module SpecHelpers
 
   def stub_request!(verb, path)
     stub_request(verb, File.join(Barge::Client::DIGITAL_OCEAN_URL, path))
-      .with(headers: { authorization: 'Bearer some_token' })
+      .with(headers: request_stub_headers)
+  end
+
+  def request_stub_headers
+    {
+      authorization: 'Bearer some_token',
+      content_type: 'application/json'
+    }
   end
 end

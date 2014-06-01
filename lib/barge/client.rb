@@ -38,7 +38,6 @@ module Barge
       @faraday ||= Faraday.new faraday_options do |f|
         f.adapter :net_http
 
-        f.headers['Content-Type'] = 'application/json'
         f.request :json
 
         f.response :follow_redirects
@@ -52,7 +51,10 @@ module Barge
 
     def faraday_options
       {
-        headers: { authorization: "Bearer #{access_token}" },
+        headers: {
+          authorization: "Bearer #{access_token}",
+          content_type: 'application/json'
+        },
         url: DIGITAL_OCEAN_URL
       }
     end

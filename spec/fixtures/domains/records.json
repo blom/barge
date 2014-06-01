@@ -1,0 +1,47 @@
+[
+    {
+        "data": "8.8.8.8",
+        "id": 21,
+        "name": "@",
+        "port": null,
+        "priority": null,
+        "type": "A",
+        "weight": null
+    },
+    {
+        "data": "NS1.DIGITALOCEAN.COM.",
+        "id": 22,
+        "name": null,
+        "port": null,
+        "priority": null,
+        "type": "NS",
+        "weight": null
+    },
+    {
+        "data": "NS2.DIGITALOCEAN.COM.",
+        "id": 23,
+        "name": null,
+        "port": null,
+        "priority": null,
+        "type": "NS",
+        "weight": null
+    },
+    {
+        "data": "NS3.DIGITALOCEAN.COM.",
+        "id": 24,
+        "name": null,
+        "port": null,
+        "priority": null,
+        "type": "NS",
+        "weight": null
+    },
+    {
+        "data": "@",
+        "id": 25,
+        "name": "example",
+        "port": null,
+        "priority": null,
+        "type": "CNAME",
+        "weight": null
+    }
+]

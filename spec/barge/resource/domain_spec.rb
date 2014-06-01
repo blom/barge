@@ -54,6 +54,16 @@ describe Barge::Resource::Domain do
     end
   end
 
+  describe '#records' do
+    it 'lists all domains records' do
+      stubbed_request = stub_request!(:get, '/domains/example.com/records')
+        .to_return(body: fixture('domains/records'), status: 200)
+      expect(domain.records('example.com'))
+        .to include a_hash_including(data: '8.8.8.8')
+      expect(stubbed_request).to have_been_requested
+    end
+  end
+
   describe '#show_record' do
     it 'shows a record' do
       stubbed_request = stub_request!(:get, '/domains/example.com/records/5')

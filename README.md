@@ -10,9 +10,8 @@ Ruby library for version 2 of
 gem install barge
 ```
 
-Ruby 1.9 and up is required. See the
-[.travis.yml](https://github.com/blom/barge/blob/master/.travis.yml) file for
-a list of supported rubies.
+Ruby 1.9 and up is required. See the [.travis.yml](.travis.yml) file for a list
+of supported rubies.
 
 ### Initialize
 

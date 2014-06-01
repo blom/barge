@@ -267,7 +267,7 @@ barge.domain.update_record(domain_name, record_id, options)
 ### Destroy domain record
 
 ``` ruby
-barge.domain.destroy(domain_name, record_id)
+barge.domain.destroy_record(domain_name, record_id)
 ```
 
 Key

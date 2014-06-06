@@ -9,7 +9,7 @@ task default: [:rubocop, :spec]
 CLOBBER.include %w(.rbx .yardoc coverage doc)
 
 RSpec::Core::RakeTask.new
-Rubocop::RakeTask.new
+RuboCop::RakeTask.new
 YARD::Rake::YardocTask.new
 
 desc 'Generate coverage data'

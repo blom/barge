@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rake'
-gem 'rspec', '~> 3.0.0.beta2'
+gem 'rspec'
 gem 'rubocop'
 gem 'simplecov'
 gem 'webmock', require: false

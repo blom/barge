@@ -1,6 +1,12 @@
 Barge
 =====
 
+[![Build Status](http://img.shields.io/travis/boats/barge.svg)][travis]
+[![Coverage Status](http://img.shields.io/coveralls/boats/barge.svg)][coveralls]
+
+[travis]: https://travis-ci.org/boats/barge
+[coveralls]: https://coveralls.io/r/boats/barge
+
 Ruby library for version 2 of
 [DigitalOcean's API](https://developers.digitalocean.com/).
 

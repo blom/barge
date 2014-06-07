@@ -1,7 +1,7 @@
 if ENV['SIMPLECOV']
   require 'simplecov'
   SimpleCov.start { add_filter '/spec/' }
-elsif ENV['TRAVIS']
+elsif ENV['TRAVIS'] && RUBY_ENGINE == 'ruby'
   require 'coveralls'
   Coveralls.wear! { add_filter '/spec/' }
 end

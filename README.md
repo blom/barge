@@ -4,10 +4,12 @@ Barge
 [![Build Status](http://img.shields.io/travis/boats/barge.svg)][travis]
 [![Coverage Status](http://img.shields.io/coveralls/boats/barge.svg)][coveralls]
 [![Code Climate](http://img.shields.io/codeclimate/github/boats/barge.svg)][codeclimate]
+[![Dependency Status](http://img.shields.io/gemnasium/boats/barge.svg)][gemnasium]
 
 [travis]: https://travis-ci.org/boats/barge
 [coveralls]: https://coveralls.io/r/boats/barge
 [codeclimate]: https://codeclimate.com/github/boats/barge
+[gemnasium]: https://gemnasium.com/boats/barge
 
 Ruby library for version 2 of
 [DigitalOcean's API](https://developers.digitalocean.com/).

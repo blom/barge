@@ -170,6 +170,12 @@ barge.droplet.restore(droplet_id, image_id)
 barge.droplet.password_reset(droplet_id)
 ```
 
+### Show droplet action
+
+``` ruby
+barge.droplet.show_action(droplet_id, action_id)
+```
+
 Image
 -----
 

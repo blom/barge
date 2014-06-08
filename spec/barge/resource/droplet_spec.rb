@@ -151,4 +151,13 @@ describe Barge::Resource::Droplet do
         .to have_been_requested
     end
   end
+
+  describe '#show_action' do
+    it 'shows action information' do
+      stubbed_request = stub_request!(:get, '/droplets/30/actions/40')
+        .to_return(body: fixture('droplets/show_action'), status: 200)
+      expect(droplet.show_action(30, 40).type).to eq 'create'
+      expect(stubbed_request).to have_been_requested
+    end
+  end
 end

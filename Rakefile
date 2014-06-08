@@ -6,7 +6,7 @@ require 'yard'
 
 task default: [:rubocop, :spec]
 
-CLOBBER.include %w(.rbx .yardoc coverage doc)
+CLOBBER.include %w(.rbx .yardoc coverage doc pkg)
 
 RSpec::Core::RakeTask.new
 RuboCop::RakeTask.new

@@ -52,4 +52,13 @@ describe Barge::Resource::Image do
         .to have_been_requested
     end
   end
+
+  describe '#show_action' do
+    it 'shows action information' do
+      stubbed_request = stub_request!(:get, '/images/104/actions/200')
+        .to_return(body: fixture('images/show_action'), status: 200)
+      expect(image.show_action(104, 200).type).to eq 'transfer'
+      expect(stubbed_request).to have_been_requested
+    end
+  end
 end

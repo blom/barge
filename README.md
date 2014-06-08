@@ -225,6 +225,12 @@ barge.image.transfer(image_id, 'region slug')
 
 Where *region slug* is for example `sfo1`.
 
+### Show image action
+
+``` ruby
+barge.image.show_action(image_id, action_id)
+```
+
 Domain
 ------
 

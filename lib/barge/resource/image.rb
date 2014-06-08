@@ -23,6 +23,10 @@ module Barge
         action(image_id, __method__, region: region)
       end
 
+      def show_action(image_id, action_id)
+        get("images/#{image_id}/actions/#{action_id}")
+      end
+
       private
 
       def action(image_id, type, params = {})

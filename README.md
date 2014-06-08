@@ -86,7 +86,7 @@ barge.droplet.create(options)
 
 See the [API documentation][droplet-create] for options.
 
-[droplet-create]: https://github.com/digitaloceancloud/api-v2-docs#droplet-create-post
+[droplet-create]: https://github.com/digitaloceancloud/api-v2-docs#droplet-create-a-new-droplet-post
 
 ### Show all droplets
 
@@ -201,7 +201,7 @@ barge.image.update(image_id, options)
 
 See the [API documentation][image-update] for options.
 
-[image-update]: https://github.com/digitaloceancloud/api-v2-docs#images-update-put
+[image-update]: https://github.com/digitaloceancloud/api-v2-docs#images-update-an-image-put
 
 ### Destroy image
 
@@ -228,7 +228,7 @@ barge.domain.create(options)
 
 See the [API documentation][domain-create] for options.
 
-[domain-create]: https://github.com/digitaloceancloud/api-v2-docs#domain-records-create-post
+[domain-create]: https://github.com/digitaloceancloud/api-v2-docs#domains-create-a-new-domain-post
 
 ### Show all domains
 
@@ -256,7 +256,7 @@ barge.domain.create_record(domain_name, options)
 
 See the [API documentation][domain-create-record] for options.
 
-[domain-create-record]: https://github.com/digitaloceancloud/api-v2-docs#domain-records-create-post
+[domain-create-record]: https://github.com/digitaloceancloud/api-v2-docs#domain-records-create-a-new-domain-record-post
 
 ### Show all domain records
 
@@ -293,7 +293,7 @@ barge.key.create(options)
 
 See the [API documentation][key-create] for options.
 
-[key-create]: https://github.com/digitaloceancloud/api-v2-docs#keys-create-post
+[key-create]: https://github.com/digitaloceancloud/api-v2-docs#keys-create-a-new-key-post
 
 ### Show all keys
 

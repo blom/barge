@@ -13,8 +13,8 @@ Barge
 [codeclimate]: https://codeclimate.com/github/boats/barge
 [gemnasium]: https://gemnasium.com/boats/barge
 
-Ruby library for version 2 of
-[DigitalOcean's API](https://developers.digitalocean.com/).
+Ruby library for [version 2 of DigitalOcean's
+API](https://github.com/digitaloceancloud/api-v2-docs).
 
 **Please note that version 2 of DigitalOcean's API is in beta, and is still
 being developed. Everything is subject to change.**

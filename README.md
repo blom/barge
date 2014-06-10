@@ -102,6 +102,12 @@ barge.droplet.all
 barge.droplet.show(droplet_id)
 ```
 
+### Show droplet backups
+
+``` ruby
+barge.droplet.backups(droplet_id)
+```
+
 ### Destroy droplet
 
 ``` ruby

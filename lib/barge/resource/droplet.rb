@@ -15,6 +15,10 @@ module Barge
         get("droplets/#{droplet_id}")
       end
 
+      def backups(droplet_id)
+        get("droplets/#{droplet_id}/backups")
+      end
+
       def destroy(droplet_id)
         delete("droplets/#{droplet_id}")
       end

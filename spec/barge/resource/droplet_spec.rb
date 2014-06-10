@@ -43,6 +43,16 @@ describe Barge::Resource::Droplet do
     end
   end
 
+  describe '#snapshots' do
+    it 'shows droplet snapshots' do
+      stubbed_request = stub_request!(:get, '/droplets/34/snapshots')
+        .to_return(body: fixture('droplets/snapshots'), status: 200)
+      expect(droplet.snapshots(34).snapshots)
+        .to include a_hash_including(distribution: 'ubuntu')
+      expect(stubbed_request).to have_been_requested
+    end
+  end
+
   describe '#destroy' do
     it 'destroys a droplet' do
       stubbed_request = stub_request!(:delete, '/droplets/11')

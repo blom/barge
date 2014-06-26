@@ -1,6 +1,7 @@
 shared_context 'resource' do
   let(:barge) { Barge::Client.new(access_token: 'some_token') }
 
+  let(:action) { barge.action }
   let(:domain) { barge.domain }
   let(:droplet) { barge.droplet }
   let(:image) { barge.image }

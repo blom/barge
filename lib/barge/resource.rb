@@ -1,5 +1,6 @@
 require 'barge/resource/base'
 
+require 'barge/resource/action'
 require 'barge/resource/domain'
 require 'barge/resource/droplet'
 require 'barge/resource/image'

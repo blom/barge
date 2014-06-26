@@ -1,0 +1,12 @@
+{
+    "action": {
+        "completed_at": null,
+        "id": 2,
+        "region": "nyc1",
+        "resource_id": null,
+        "resource_type": "backend",
+        "started_at": "2014-06-25T19:10:57Z",
+        "status": "in-progress",
+        "type": "test"
+    }
+}

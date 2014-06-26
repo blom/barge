@@ -77,6 +77,21 @@ You can use `success?` to check if a successful HTTP status code was returned:
 barge.droplet.create(options).success? # => true
 ```
 
+Action
+------
+
+### Show all actions
+
+``` ruby
+barge.action.all
+```
+
+### Show action
+
+``` ruby
+barge.action.show(action_id)
+```
+
 Droplet
 -------
 

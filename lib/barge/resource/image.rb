@@ -4,7 +4,14 @@ module Barge
       include Resource::Base
 
       def all
-        get('images')
+        response = get('images')
+        returned_response = response
+        while response.links && response.links.pages && response.links.pages.next
+          link = response.links.pages.next.sub(Barge::Client::DIGITAL_OCEAN_URL + '/', '')
+          response = get(link)
+          returned_response.images += response.images
+        end
+        returned_response
       end
 
       def show(image_id)

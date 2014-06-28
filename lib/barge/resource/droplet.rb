@@ -19,6 +19,10 @@ module Barge
         get("droplets/#{droplet_id}/backups")
       end
 
+      def kernels(droplet_id)
+        get("droplets/#{droplet_id}/kernels")
+      end
+
       def snapshots(droplet_id)
         get("droplets/#{droplet_id}/snapshots")
       end

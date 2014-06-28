@@ -43,6 +43,16 @@ describe Barge::Resource::Droplet do
     end
   end
 
+  describe '#kernels' do
+    it 'shows available kernels' do
+      stubbed_request = stub_request!(:get, '/droplets/52/kernels')
+        .to_return(body: fixture('droplets/kernels'), status: 200)
+      expect(droplet.kernels(52).kernels)
+        .to include a_hash_including(version: '3.13.0-24-generic')
+      expect(stubbed_request).to have_been_requested
+    end
+  end
+
   describe '#snapshots' do
     it 'shows droplet snapshots' do
       stubbed_request = stub_request!(:get, '/droplets/34/snapshots')

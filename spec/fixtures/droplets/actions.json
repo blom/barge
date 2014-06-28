@@ -1,0 +1,17 @@
+{
+    "actions": [
+        {
+            "completed_at": null,
+            "id": 18,
+            "region": "nyc1",
+            "resource_id": 23,
+            "resource_type": "droplet",
+            "started_at": "2014-06-27T21:10:26Z",
+            "status": "in-progress",
+            "type": "create"
+        }
+    ],
+    "meta": {
+        "total": 1
+    }
+}

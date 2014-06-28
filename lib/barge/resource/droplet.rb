@@ -67,6 +67,10 @@ module Barge
         action(droplet_id, __method__)
       end
 
+      def actions(droplet_id)
+        get("droplets/#{droplet_id}/actions")
+      end
+
       def show_action(droplet_id, action_id)
         get("droplets/#{droplet_id}/actions/#{action_id}")
       end

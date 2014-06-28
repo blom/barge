@@ -172,6 +172,16 @@ describe Barge::Resource::Droplet do
     end
   end
 
+  describe '#actions' do
+    it 'shows droplet actions' do
+      stubbed_request = stub_request!(:get, '/droplets/51/actions')
+        .to_return(body: fixture('droplets/actions'), status: 200)
+      expect(droplet.actions(51).actions)
+        .to include a_hash_including(resource_id: 23)
+      expect(stubbed_request).to have_been_requested
+    end
+  end
+
   describe '#show_action' do
     it 'shows action information' do
       stubbed_request = stub_request!(:get, '/droplets/30/actions/40')

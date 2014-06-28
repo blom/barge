@@ -8,7 +8,7 @@ describe Barge::Resource::Image do
     it 'lists all images' do
       stubbed_request = stub_request!(:get, '/images')
         .to_return(body: fixture('images/all'), status: 200)
-      expect(image.all).to include a_hash_including(name: 'Ubuntu 13.04')
+      expect(image.all.images).to include a_hash_including(name: 'Ubuntu 13.04')
       expect(stubbed_request).to have_been_requested
     end
   end

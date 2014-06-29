@@ -15,6 +15,10 @@ module Barge
         get("account/keys/#{key_id}")
       end
 
+      def update(key_id, options)
+        put("account/keys/#{key_id}", options.to_json)
+      end
+
       def destroy(key_id)
         delete("account/keys/#{key_id}")
       end

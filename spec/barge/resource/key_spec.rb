@@ -33,6 +33,17 @@ describe Barge::Resource::Key do
     end
   end
 
+  describe '#update' do
+    it 'updates a key' do
+      stubbed_request = stub_request!(:put, '/account/keys/115')
+        .to_return(body: fixture('keys/update'), status: 200)
+      options = { name: 'new_key_name' }
+      expect(key.update(115, options).ssh_key.id).to be 5
+      expect(stubbed_request.with(body: options.to_json))
+        .to have_been_requested
+    end
+  end
+
   describe '#destroy' do
     it 'destroys a key' do
       stubbed_request = stub_request!(:delete, '/account/keys/101')

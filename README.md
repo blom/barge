@@ -360,6 +360,16 @@ barge.key.all
 barge.key.show(key_id_or_fingerprint)
 ```
 
+### Update key
+
+``` ruby
+barge.key.update(key_id_or_fingerprint, options)
+```
+
+See the [API documentation][key-update] for options.
+
+[key-update]: https://developers.digitalocean.com/#update-a-key
+
 ### Destroy key
 
 ``` ruby

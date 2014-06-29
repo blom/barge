@@ -3,6 +3,8 @@ module Barge
     module Base
       attr_reader :faraday
 
+      PER_PAGE = 999
+
       def initialize(faraday)
         @faraday = faraday
       end
@@ -16,7 +18,8 @@ module Barge
       end
 
       def request(verb, *args)
-        response = faraday.public_send(verb, *args)
+        options = { per_page: PER_PAGE } if verb == :get
+        response = faraday.public_send(verb, *args, options)
         response.body.tap do |r|
           r.define_singleton_method(:response) { response }
           r.define_singleton_method(:success?) { response.success? }

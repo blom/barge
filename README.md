@@ -123,6 +123,12 @@ barge.droplet.show(droplet_id)
 barge.droplet.backups(droplet_id)
 ```
 
+### Show droplet kernels
+
+``` ruby
+barge.droplet.kernels(droplet_id)
+```
+
 ### Show droplet snapshots
 
 ``` ruby
@@ -195,6 +201,12 @@ barge.droplet.restore(droplet_id, image_id)
 
 ``` ruby
 barge.droplet.password_reset(droplet_id)
+```
+
+### Show droplet actions
+
+``` ruby
+barge.droplet.actions(droplet_id)
 ```
 
 ### Show droplet action

@@ -31,7 +31,7 @@ module Barge
 
       def action(image_id, type, params = {})
         post("images/#{image_id}/actions",
-             { type: type, params: params }.to_json)
+             { type: type }.merge(params).to_json)
       end
     end
   end

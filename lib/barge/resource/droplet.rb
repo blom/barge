@@ -83,7 +83,7 @@ module Barge
 
       def action(droplet_id, type, params = {})
         post("droplets/#{droplet_id}/actions",
-             { type: type, params: params }.to_json)
+             { type: type }.merge(params).to_json)
       end
     end
   end

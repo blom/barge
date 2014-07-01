@@ -78,7 +78,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/rename'), status: 200)
       expect(droplet.rename(12, 'new_name').type).to eq 'rename'
       expect(stubbed_request
-        .with(body: { type: :rename, params: { name: :new_name } }.to_json))
+        .with(body: { type: :rename, name: :new_name }.to_json))
         .to have_been_requested
     end
   end
@@ -89,8 +89,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/reboot'), status: 200)
       expect(droplet.reboot(13).type).to eq 'reboot'
       expect(stubbed_request
-        .with(body: { type: :reboot, params: {} }.to_json))
-        .to have_been_requested
+        .with(body: { type: :reboot }.to_json)).to have_been_requested
     end
   end
 
@@ -100,8 +99,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/shutdown'), status: 200)
       expect(droplet.shutdown(20).type).to eq 'shutdown'
       expect(stubbed_request
-        .with(body: { type: :shutdown, params: {} }.to_json))
-        .to have_been_requested
+        .with(body: { type: :shutdown }.to_json)).to have_been_requested
     end
   end
 
@@ -111,8 +109,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/power_off'), status: 200)
       expect(droplet.power_off(14).type).to eq 'power_off'
       expect(stubbed_request
-        .with(body: { type: :power_off, params: {} }.to_json))
-        .to have_been_requested
+        .with(body: { type: :power_off }.to_json)).to have_been_requested
     end
   end
 
@@ -122,8 +119,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/power_cycle'), status: 200)
       expect(droplet.power_cycle(15).type).to eq 'power_cycle'
       expect(stubbed_request
-        .with(body: { type: :power_cycle, params: {} }.to_json))
-        .to have_been_requested
+        .with(body: { type: :power_cycle }.to_json)).to have_been_requested
     end
   end
 
@@ -133,8 +129,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/power_on'), status: 200)
       expect(droplet.power_on(15).type).to eq 'power_on'
       expect(stubbed_request
-        .with(body: { type: :power_on, params: {} }.to_json))
-        .to have_been_requested
+        .with(body: { type: :power_on }.to_json)).to have_been_requested
     end
   end
 
@@ -144,7 +139,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/resize'), status: 200)
       expect(droplet.resize(17, '1024m').type).to eq 'resize'
       expect(stubbed_request
-        .with(body: { type: :resize, params: { size: '1024m' } }.to_json))
+        .with(body: { type: :resize, size: '1024m' }.to_json))
         .to have_been_requested
     end
   end
@@ -155,7 +150,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/rebuild'), status: 200)
       expect(droplet.rebuild(18, 100).type).to eq 'rebuild'
       expect(stubbed_request
-        .with(body: { type: :rebuild, params: { image: 100 } }.to_json))
+        .with(body: { type: :rebuild, image: 100 }.to_json))
         .to have_been_requested
     end
   end
@@ -166,7 +161,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/restore'), status: 200)
       expect(droplet.restore(19, 101).type).to eq 'restore'
       expect(stubbed_request
-        .with(body: { type: :restore, params: { image: 101 } }.to_json))
+        .with(body: { type: :restore, image: 101 }.to_json))
         .to have_been_requested
     end
   end
@@ -177,8 +172,7 @@ describe Barge::Resource::Droplet do
         .to_return(body: fixture('droplets/password_reset'), status: 200)
       expect(droplet.password_reset(21).type).to eq 'password_reset'
       expect(stubbed_request
-        .with(body: { type: :password_reset, params: {} }.to_json))
-        .to have_been_requested
+        .with(body: { type: :password_reset }.to_json)).to have_been_requested
     end
   end
 

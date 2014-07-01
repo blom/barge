@@ -48,7 +48,7 @@ describe Barge::Resource::Image do
         .to_return(body: fixture('images/transfer'), status: 200)
       expect(image.transfer(103, 'sfo1').type).to eq 'transfer'
       expect(stubbed_request
-        .with(body: { type: :transfer, params: { region: 'sfo1' } }.to_json))
+        .with(body: { type: :transfer, region: 'sfo1' }.to_json))
         .to have_been_requested
     end
   end

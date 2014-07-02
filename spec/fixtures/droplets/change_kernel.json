@@ -1,0 +1,12 @@
+{
+    "action": {
+        "completed_at": null,
+        "id": 14,
+        "region": "nyc1",
+        "resource_id": 14,
+        "resource_type": "droplet",
+        "started_at": "2014-06-27T21:10:25Z",
+        "status": "in-progress",
+        "type": "change_kernel"
+    }
+}

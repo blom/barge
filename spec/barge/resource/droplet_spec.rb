@@ -176,6 +176,18 @@ describe Barge::Resource::Droplet do
     end
   end
 
+  describe '#change_kernel' do
+    it 'changes the kernel' do
+      stubbed_request = stub_request!(:post, '/droplets/219/actions')
+        .to_return(body: fixture('droplets/change_kernel'), status: 200)
+      expect(droplet.change_kernel(219, 313).action)
+        .to include type: 'change_kernel'
+      expect(stubbed_request
+        .with(body: { type: :change_kernel, kernel: 313 }.to_json))
+        .to have_been_requested
+    end
+  end
+
   describe '#actions' do
     it 'shows droplet actions' do
       stubbed_request = stub_request!(:get, '/droplets/51/actions')

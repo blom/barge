@@ -71,6 +71,10 @@ module Barge
         action(droplet_id, __method__)
       end
 
+      def change_kernel(droplet_id, kernel_id)
+        action(droplet_id, __method__, kernel: kernel_id)
+      end
+
       def actions(droplet_id)
         get("droplets/#{droplet_id}/actions")
       end

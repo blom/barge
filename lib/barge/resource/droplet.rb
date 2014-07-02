@@ -83,6 +83,10 @@ module Barge
         action(droplet_id, __method__)
       end
 
+      def enable_private_networking(droplet_id)
+        action(droplet_id, __method__)
+      end
+
       def actions(droplet_id)
         get("droplets/#{droplet_id}/actions")
       end

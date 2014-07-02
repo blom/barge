@@ -208,6 +208,21 @@ describe Barge::Resource::Droplet do
     end
   end
 
+  describe '#enable_private_networking' do
+    it 'enables private networking' do
+      to_return = {
+        body: fixture('droplets/enable_private_networking'), status: 200
+      }
+      stubbed_request =
+        stub_request!(:post, '/droplets/222/actions').to_return(to_return)
+      expect(droplet.enable_private_networking(222).action.type)
+        .to eq 'enable_private_networking'
+      expect(stubbed_request
+        .with(body: { type: :enable_private_networking }.to_json))
+        .to have_been_requested
+    end
+  end
+
   describe '#actions' do
     it 'shows droplet actions' do
       stubbed_request = stub_request!(:get, '/droplets/51/actions')

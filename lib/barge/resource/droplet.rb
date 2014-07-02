@@ -75,6 +75,10 @@ module Barge
         action(droplet_id, __method__, kernel: kernel_id)
       end
 
+      def enable_ipv6(droplet_id)
+        action(droplet_id, __method__)
+      end
+
       def actions(droplet_id)
         get("droplets/#{droplet_id}/actions")
       end

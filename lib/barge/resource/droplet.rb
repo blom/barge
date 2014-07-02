@@ -79,6 +79,10 @@ module Barge
         action(droplet_id, __method__)
       end
 
+      def disable_backups(droplet_id)
+        action(droplet_id, __method__)
+      end
+
       def actions(droplet_id)
         get("droplets/#{droplet_id}/actions")
       end

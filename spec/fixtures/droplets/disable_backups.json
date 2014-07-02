@@ -1,0 +1,12 @@
+{
+    "action": {
+        "completed_at": null,
+        "id": 16,
+        "region": "nyc1",
+        "resource_id": 16,
+        "resource_type": "droplet",
+        "started_at": "2014-06-27T21:10:25Z",
+        "status": "in-progress",
+        "type": "disable_backups"
+    }
+}

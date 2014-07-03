@@ -203,6 +203,30 @@ barge.droplet.restore(droplet_id, image_id)
 barge.droplet.password_reset(droplet_id)
 ```
 
+### Change a droplet's kernel
+
+``` ruby
+barge.droplet.change_kernel(droplet_id, kernel_id)
+```
+
+### Enable IPv6 for a droplet
+
+``` ruby
+barge.droplet.enable_ipv6(droplet_id)
+```
+
+### Disable backups for a droplet
+
+``` ruby
+barge.droplet.disable_backups(droplet_id)
+```
+
+### Enable private networking for a droplet
+
+``` ruby
+barge.droplet.enable_private_networking(droplet_id)
+```
+
 ### Show droplet actions
 
 ``` ruby

@@ -1,42 +1,69 @@
 {
-    "backups": [],
-    "id": 1,
-    "image": {
-        "distribution": "ubuntu",
-        "id": 119192818,
-        "name": "Ubuntu 13.04",
-        "public": true,
-        "regions": [
-            "nyc1"
+    "droplet": {
+        "action_ids": [
+            19
         ],
-        "slug": null
+        "backup_ids": [],
+        "created_at": "2014-07-02T16:10:24Z",
+        "id": 24,
+        "image": {
+            "created_at": "2014-07-02T16:10:24Z",
+            "distribution": "ubuntu",
+            "id": 449676388,
+            "name": "Ubuntu 13.04",
+            "public": true,
+            "regions": [
+                "nyc1"
+            ],
+            "slug": null
+        },
+        "kernel": {
+            "id": 485432972,
+            "name": "Ubuntu 14.04 x64 vmlinuz-3.13.0-24-generic (1221)",
+            "version": "3.13.0-24-generic"
+        },
+        "locked": false,
+        "name": "My-Droplet",
+        "networks": {},
+        "region": {
+            "available": true,
+            "features": [
+                "virtio",
+                "private_networking",
+                "backups",
+                "ipv6"
+            ],
+            "name": "New York",
+            "sizes": [
+                "1024mb",
+                "512mb"
+            ],
+            "slug": "nyc1"
+        },
+        "size": {
+            "disk": 20,
+            "memory": 512,
+            "price_hourly": "0.00744",
+            "price_monthly": "5.0",
+            "regions": [
+                "nyc1",
+                "sfo1",
+                "ams1"
+            ],
+            "slug": "512mb",
+            "transfer": null,
+            "vcpus": 1
+        },
+        "snapshot_ids": [],
+        "status": "new"
     },
-    "locked": false,
-    "name": "My-Droplet",
-    "networks": [],
-    "region": {
-        "available": true,
-        "name": "New York",
-        "sizes": [
-            "1024mb",
-            "512mb"
-        ],
-        "slug": "nyc1"
-    },
-    "size": {
-        "disk": 20,
-        "memory": 512,
-        "price_hourly": "0.00744",
-        "price_monthly": "5.0",
-        "regions": [
-            "nyc1",
-            "sfo1",
-            "ams4"
-        ],
-        "slug": "512mb",
-        "transfer": null,
-        "vcpus": 1
-    },
-    "snapshots": [],
-    "status": "new"
+    "links": {
+        "actions": [
+            {
+                "href": "http://example.org/v2/actions/19",
+                "id": 19,
+                "rel": "create"
+            }
+        ]
+    }
 }

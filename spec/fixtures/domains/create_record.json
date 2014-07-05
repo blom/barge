@@ -1,9 +1,11 @@
 {
-    "data": "1.2.3.4",
-    "id": 2144587,
-    "name": "test",
-    "port": null,
-    "priority": null,
-    "type": "A",
-    "weight": null
+    "domain_record": {
+        "data": "2001:db8::ff00:42:8329",
+        "id": 16,
+        "name": "subdomain",
+        "port": null,
+        "priority": null,
+        "type": "AAAA",
+        "weight": null
+    }
 }

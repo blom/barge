@@ -1,44 +1,84 @@
-[
-    {
-        "backups": [],
-        "id": 2,
-        "image": {
-            "distribution": "ubuntu",
-            "id": 119192817,
-            "name": "Ubuntu 13.04",
-            "public": true,
-            "regions": [
-                "nyc1"
+{
+    "droplets": [
+        {
+            "action_ids": [],
+            "backup_ids": [
+                449676381
             ],
-            "slug": "ubuntu1304"
-        },
-        "locked": false,
-        "name": "test.example.com",
-        "networks": [],
-        "region": {
-            "available": true,
-            "name": "New York",
-            "sizes": [
-                "1024mb",
-                "512mb"
+            "created_at": "2014-07-02T16:10:23Z",
+            "id": 18,
+            "image": {
+                "created_at": "2014-07-02T16:10:23Z",
+                "distribution": "ubuntu",
+                "id": 119192817,
+                "name": "Ubuntu 13.04",
+                "public": true,
+                "regions": [
+                    "nyc1"
+                ],
+                "slug": "ubuntu1304"
+            },
+            "kernel": {
+                "id": 485432985,
+                "name": "DO-recovery-static-fsck",
+                "version": "3.8.0-25-generic"
+            },
+            "locked": false,
+            "name": "test.example.com",
+            "networks": {
+                "v4": [
+                    {
+                        "gateway": "127.0.0.14",
+                        "ip_address": "127.0.0.13",
+                        "netmask": "255.255.255.0",
+                        "type": "public"
+                    }
+                ],
+                "v6": [
+                    {
+                        "cidr": 124,
+                        "gateway": "2400:6180:0000:00D0:0000:0000:0009:7000",
+                        "ip_address": "2001::13",
+                        "type": "public"
+                    }
+                ]
+            },
+            "region": {
+                "available": true,
+                "features": [
+                    "virtio",
+                    "private_networking",
+                    "backups",
+                    "ipv6"
+                ],
+                "name": "New York",
+                "sizes": [
+                    "1024mb",
+                    "512mb"
+                ],
+                "slug": "nyc1"
+            },
+            "size": {
+                "disk": 20,
+                "memory": 512,
+                "price_hourly": "0.00744",
+                "price_monthly": "5.0",
+                "regions": [
+                    "nyc1",
+                    "sfo1",
+                    "ams1"
+                ],
+                "slug": "512mb",
+                "transfer": null,
+                "vcpus": 1
+            },
+            "snapshot_ids": [
+                449676382
             ],
-            "slug": "nyc1"
-        },
-        "size": {
-            "disk": 20,
-            "memory": 512,
-            "price_hourly": "0.00744",
-            "price_monthly": "5.0",
-            "regions": [
-                "nyc1",
-                "sfo1",
-                "ams4"
-            ],
-            "slug": "512mb",
-            "transfer": null,
-            "vcpus": 1
-        },
-        "snapshots": [],
-        "status": "active"
+            "status": "active"
+        }
+    ],
+    "meta": {
+        "total": 1
     }
-]
+}

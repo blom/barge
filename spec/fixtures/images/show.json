@@ -1,10 +1,13 @@
 {
-    "distribution": null,
-    "id": 119192819,
-    "name": "Ubuntu 13.04",
-    "public": false,
-    "regions": [
-        "nyc1"
-    ],
-    "slug": null
+    "image": {
+        "created_at": "2014-07-02T16:10:25Z",
+        "distribution": null,
+        "id": 449676391,
+        "name": "Ubuntu 13.04",
+        "public": false,
+        "regions": [
+            "region--1"
+        ],
+        "slug": null
+    }
 }

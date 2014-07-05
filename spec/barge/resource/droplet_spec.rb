@@ -9,7 +9,7 @@ describe Barge::Resource::Droplet do
       stubbed_request = stub_request!(:post, '/droplets')
         .to_return(body: fixture('droplets/create'), status: 202)
       options = { name: 'x', image: 123 }
-      expect(droplet.create(options).id).to be 1
+      expect(droplet.create(options).droplet.id).to be 24
       expect(stubbed_request.with(body: options.to_json))
         .to have_been_requested
     end
@@ -19,7 +19,8 @@ describe Barge::Resource::Droplet do
     it 'lists all Droplets' do
       stubbed_request = stub_request!(:get, '/droplets')
         .to_return(body: fixture('droplets/all'), status: 200)
-      expect(droplet.all.first).to include name: 'test.example.com'
+      expect(droplet.all.droplets)
+        .to include a_hash_including(name: 'test.example.com')
       expect(stubbed_request).to have_been_requested
     end
   end
@@ -28,7 +29,7 @@ describe Barge::Resource::Droplet do
     it 'returns information about a specific droplet' do
       stubbed_request = stub_request!(:get, '/droplets/10')
         .to_return(body: fixture('droplets/show'), status: 200)
-      expect(droplet.show(10).snapshots.first.id).to be 32
+      expect(droplet.show(10).droplet.name).to eq 'test.example.com'
       expect(stubbed_request).to have_been_requested
     end
   end
@@ -76,7 +77,7 @@ describe Barge::Resource::Droplet do
     it 'renames a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/12/actions')
         .to_return(body: fixture('droplets/rename'), status: 200)
-      expect(droplet.rename(12, 'new_name').type).to eq 'rename'
+      expect(droplet.rename(12, 'new_name').action.type).to eq 'rename'
       expect(stubbed_request
         .with(body: { type: :rename, name: :new_name }.to_json))
         .to have_been_requested
@@ -87,7 +88,7 @@ describe Barge::Resource::Droplet do
     it 'reboots a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/13/actions')
         .to_return(body: fixture('droplets/reboot'), status: 200)
-      expect(droplet.reboot(13).type).to eq 'reboot'
+      expect(droplet.reboot(13).action.type).to eq 'reboot'
       expect(stubbed_request
         .with(body: { type: :reboot }.to_json)).to have_been_requested
     end
@@ -97,7 +98,7 @@ describe Barge::Resource::Droplet do
     it 'shuts down a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/20/actions')
         .to_return(body: fixture('droplets/shutdown'), status: 200)
-      expect(droplet.shutdown(20).type).to eq 'shutdown'
+      expect(droplet.shutdown(20).action.type).to eq 'shutdown'
       expect(stubbed_request
         .with(body: { type: :shutdown }.to_json)).to have_been_requested
     end
@@ -107,7 +108,7 @@ describe Barge::Resource::Droplet do
     it 'powers off a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/14/actions')
         .to_return(body: fixture('droplets/power_off'), status: 200)
-      expect(droplet.power_off(14).type).to eq 'power_off'
+      expect(droplet.power_off(14).action.type).to eq 'power_off'
       expect(stubbed_request
         .with(body: { type: :power_off }.to_json)).to have_been_requested
     end
@@ -117,7 +118,7 @@ describe Barge::Resource::Droplet do
     it 'powers cycles a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/15/actions')
         .to_return(body: fixture('droplets/power_cycle'), status: 200)
-      expect(droplet.power_cycle(15).type).to eq 'power_cycle'
+      expect(droplet.power_cycle(15).action.type).to eq 'power_cycle'
       expect(stubbed_request
         .with(body: { type: :power_cycle }.to_json)).to have_been_requested
     end
@@ -127,7 +128,7 @@ describe Barge::Resource::Droplet do
     it 'powers on a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/15/actions')
         .to_return(body: fixture('droplets/power_on'), status: 200)
-      expect(droplet.power_on(15).type).to eq 'power_on'
+      expect(droplet.power_on(15).action.type).to eq 'power_on'
       expect(stubbed_request
         .with(body: { type: :power_on }.to_json)).to have_been_requested
     end
@@ -137,7 +138,7 @@ describe Barge::Resource::Droplet do
     it 'resizes a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/17/actions')
         .to_return(body: fixture('droplets/resize'), status: 200)
-      expect(droplet.resize(17, '1024m').type).to eq 'resize'
+      expect(droplet.resize(17, '1024m').action.type).to eq 'resize'
       expect(stubbed_request
         .with(body: { type: :resize, size: '1024m' }.to_json))
         .to have_been_requested
@@ -148,7 +149,7 @@ describe Barge::Resource::Droplet do
     it 'rebuilds a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/18/actions')
         .to_return(body: fixture('droplets/rebuild'), status: 200)
-      expect(droplet.rebuild(18, 100).type).to eq 'rebuild'
+      expect(droplet.rebuild(18, 100).action.type).to eq 'rebuild'
       expect(stubbed_request
         .with(body: { type: :rebuild, image: 100 }.to_json))
         .to have_been_requested
@@ -159,7 +160,7 @@ describe Barge::Resource::Droplet do
     it 'restores a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/19/actions')
         .to_return(body: fixture('droplets/restore'), status: 200)
-      expect(droplet.restore(19, 101).type).to eq 'restore'
+      expect(droplet.restore(19, 101).action.type).to eq 'restore'
       expect(stubbed_request
         .with(body: { type: :restore, image: 101 }.to_json))
         .to have_been_requested
@@ -170,7 +171,7 @@ describe Barge::Resource::Droplet do
     it "resets a droplet's password" do
       stubbed_request = stub_request!(:post, '/droplets/21/actions')
         .to_return(body: fixture('droplets/password_reset'), status: 200)
-      expect(droplet.password_reset(21).type).to eq 'password_reset'
+      expect(droplet.password_reset(21).action.type).to eq 'password_reset'
       expect(stubbed_request
         .with(body: { type: :password_reset }.to_json)).to have_been_requested
     end
@@ -237,7 +238,7 @@ describe Barge::Resource::Droplet do
     it 'shows action information' do
       stubbed_request = stub_request!(:get, '/droplets/30/actions/40')
         .to_return(body: fixture('droplets/show_action'), status: 200)
-      expect(droplet.show_action(30, 40).type).to eq 'create'
+      expect(droplet.show_action(30, 40).action.type).to eq 'create'
       expect(stubbed_request).to have_been_requested
     end
   end

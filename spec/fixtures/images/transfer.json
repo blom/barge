@@ -1,5 +1,12 @@
 {
-    "progress": "in-progress",
-    "started_at": "2014-05-12T19:41:43Z",
-    "type": "transfer"
+    "action": {
+        "completed_at": null,
+        "id": 22,
+        "region": "sfo1",
+        "resource_id": 449676390,
+        "resource_type": "image",
+        "started_at": "2014-07-02T16:10:25Z",
+        "status": "in-progress",
+        "type": "transfer"
+    }
 }

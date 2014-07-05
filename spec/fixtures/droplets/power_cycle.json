@@ -1,5 +1,12 @@
 {
-    "progress": "in-progress",
-    "started_at": "2014-05-12T19:41:44Z",
-    "type": "power_cycle"
+    "action": {
+        "completed_at": null,
+        "id": 5,
+        "region": "nyc1",
+        "resource_id": 5,
+        "resource_type": "droplet",
+        "started_at": "2014-07-02T16:10:20Z",
+        "status": "in-progress",
+        "type": "power_cycle"
+    }
 }

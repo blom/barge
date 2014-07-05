@@ -1,6 +1,12 @@
 {
-    "id": 10,
-    "progress": "in-progress",
-    "started_at": "2014-06-05T17:59:46Z",
-    "type": "create"
+    "action": {
+        "completed_at": null,
+        "id": 3,
+        "region": "nyc1",
+        "resource_id": 3,
+        "resource_type": "droplet",
+        "started_at": "2014-07-02T16:10:19Z",
+        "status": "in-progress",
+        "type": "create"
+    }
 }

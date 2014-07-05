@@ -1,22 +1,29 @@
-[
-    {
-        "distribution": "ubuntu",
-        "id": 119192817,
-        "name": "Ubuntu 13.04",
-        "public": true,
-        "regions": [
-            "nyc1"
-        ],
-        "slug": "ubuntu1304"
-    },
-    {
-        "distribution": null,
-        "id": 119192823,
-        "name": "Ubuntu 13.04",
-        "public": false,
-        "regions": [
-            "nyc1"
-        ],
-        "slug": null
+{
+    "images": [
+        {
+            "created_at": "2014-07-02T16:10:25Z",
+            "distribution": "ubuntu",
+            "id": 119192817,
+            "name": "Ubuntu 13.04",
+            "public": true,
+            "regions": [
+                "nyc1"
+            ],
+            "slug": "ubuntu1304"
+        },
+        {
+            "created_at": "2014-07-02T16:10:25Z",
+            "distribution": "ubuntu",
+            "id": 449676376,
+            "name": "Ubuntu 13.04",
+            "public": true,
+            "regions": [
+                "nyc1"
+            ],
+            "slug": "ubuntu1404"
+        }
+    ],
+    "meta": {
+        "total": 2
     }
-]
+}

@@ -5,7 +5,7 @@
         "region": "nyc1",
         "resource_id": 17,
         "resource_type": "droplet",
-        "started_at": "2014-06-27T21:10:25Z",
+        "started_at": "2014-07-02T16:10:22Z",
         "status": "in-progress",
         "type": "enable_private_networking"
     }

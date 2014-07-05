@@ -83,6 +83,17 @@ You can use `success?` to check if a successful HTTP status code was returned:
 barge.droplet.create(options).success? # => true
 ```
 
+### response
+
+Barge uses [Faraday][faraday]. You can use `response` to get to the response
+object:
+
+``` ruby
+barge.droplet.show(droplet_id).response # => Faraday::Response
+```
+
+[faraday]: https://github.com/lostisland/faraday
+
 Action
 ------
 

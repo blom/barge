@@ -16,7 +16,7 @@ describe Barge::Resource::Droplet do
   end
 
   describe '#all' do
-    it 'lists all Droplets' do
+    it 'lists all droplets' do
       stubbed_request = stub_request!(:get, '/droplets')
         .to_return(body: fixture('droplets/all'), status: 200)
       expect(droplet.all.droplets)

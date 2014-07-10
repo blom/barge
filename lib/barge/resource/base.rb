@@ -3,7 +3,7 @@ module Barge
     module Base
       attr_reader :faraday
 
-      PER_PAGE = 999
+      PER_PAGE = 200
 
       def initialize(faraday)
         @faraday = faraday

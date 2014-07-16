@@ -19,11 +19,7 @@ module Barge
 
       def request(verb, *args)
         options = { per_page: PER_PAGE } if verb == :get
-        response = faraday.public_send(verb, *args, options)
-        response.body.tap do |r|
-          r.define_singleton_method(:response) { response }
-          r.define_singleton_method(:success?) { response.success? }
-        end
+        Response.new faraday.public_send(verb, *args, options)
       end
     end
   end

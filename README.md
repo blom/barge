@@ -95,17 +95,44 @@ barge.droplet.show(droplet_id).response # => Faraday::Response
 
 [faraday]: https://github.com/lostisland/faraday
 
-### Pagination
+Pagination
+----------
 
-For [paginated resources][api-links], a maximum of 200 objects is returned by
-default (the maximum allowed by the API). You can also use `per_page` and
-`page`:
+For [paginated resources][api-links], a maximum of 200 objects are returned by
+default (the maximum allowed by the API).
+
+### Limit objects per page and/or get a specific page
 
 ``` ruby
 barge.image.all(per_page: 10, page: 2)
 ```
 
 [api-links]: https://developers.digitalocean.com/#links
+
+### Check if a response is paginated
+
+``` ruby
+barge.action.all.paginated? # => true
+barge.region.all.paginated? # => false
+```
+
+### Get the previous page number
+
+``` ruby
+barge.image.all(per_page: 5, page: 2).prev_page # => 1
+```
+
+### Get the next page number
+
+``` ruby
+barge.image.all(per_page: 5, page: 2).next_page # => 3
+```
+
+### Get the last page number
+
+``` ruby
+barge.image.all(per_page: 5, page: 2).last_page # => 8
+```
 
 Action
 ------

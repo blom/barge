@@ -3,8 +3,8 @@ module Barge
     class Action
       include Resource::Base
 
-      def all
-        get('actions')
+      def all(options = {})
+        get('actions', options)
       end
 
       def show(action_id)

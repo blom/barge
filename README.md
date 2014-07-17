@@ -71,7 +71,8 @@ droplet['droplet']['size']['vcpus'] # => 1
 
 See the [API documentation on responses][api-responses] if you are wondering
 why attributes are contained within a `droplet` key. This might change when
-pagination is implemented so you can say for instance `droplet.name` instead.
+pagination is fully implemented so you can say for instance `droplet.name`
+instead.
 
 [api-responses]: https://developers.digitalocean.com/#responses
 
@@ -93,6 +94,18 @@ barge.droplet.show(droplet_id).response # => Faraday::Response
 ```
 
 [faraday]: https://github.com/lostisland/faraday
+
+### Pagination
+
+For [paginated resources][api-links], a maximum of 200 objects is returned by
+default (the maximum allowed by the API). You can also use `per_page` and
+`page`:
+
+``` ruby
+barge.image.all(per_page: 10, page: 2)
+```
+
+[api-links]: https://developers.digitalocean.com/#links
 
 Action
 ------

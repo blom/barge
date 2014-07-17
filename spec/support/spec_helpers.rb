@@ -4,7 +4,7 @@ module SpecHelpers
   end
 
   def stub_request!(verb, path)
-    path += '?per_page=200' if verb == :get
+    path += '?per_page=200' if verb == :get && !path.include?('per_page=')
     stub_request(verb, File.join(Barge::Client::DIGITAL_OCEAN_URL, path))
       .with(headers: request_stub_headers)
   end

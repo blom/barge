@@ -7,8 +7,8 @@ module Barge
         post('domains', options.to_json)
       end
 
-      def all
-        get('domains')
+      def all(options = {})
+        get('domains', options)
       end
 
       def show(domain_name)
@@ -23,8 +23,8 @@ module Barge
         post("domains/#{domain_name}/records", options.to_json)
       end
 
-      def records(domain_name)
-        get("domains/#{domain_name}/records")
+      def records(domain_name, options = {})
+        get("domains/#{domain_name}/records", options)
       end
 
       def show_record(domain_name, record_id)

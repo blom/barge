@@ -7,8 +7,8 @@ module Barge
         post('droplets', options.to_json)
       end
 
-      def all
-        get('droplets')
+      def all(options = {})
+        get('droplets', options)
       end
 
       def show(droplet_id)

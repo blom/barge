@@ -23,6 +23,14 @@ describe Barge::Resource::Droplet do
         .to include a_hash_including(name: 'test.example.com')
       expect(stubbed_request).to have_been_requested
     end
+
+    it 'accepts an options hash' do
+      stubbed_request = stub_request!(:get, '/droplets?per_page=3&page=5')
+        .to_return(body: fixture('droplets/all'), status: 200)
+      expect(droplet.all(per_page: 3, page: 5).droplets)
+        .to include a_hash_including(name: 'test.example.com')
+      expect(stubbed_request).to have_been_requested
+    end
   end
 
   describe '#show' do

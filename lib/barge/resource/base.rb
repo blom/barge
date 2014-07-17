@@ -17,9 +17,9 @@ module Barge
         end
       end
 
-      def request(verb, *args)
-        options = { per_page: PER_PAGE } if verb == :get
-        Response.new faraday.public_send(verb, *args, options)
+      def request(verb, path, options = {})
+        options = { per_page: PER_PAGE }.merge(options) if verb == :get
+        Response.new faraday.public_send(verb, path, options)
       end
     end
   end

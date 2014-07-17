@@ -12,6 +12,14 @@ describe Barge::Resource::Action do
         .to include a_hash_including(status: 'in-progress')
       expect(stubbed_request).to have_been_requested
     end
+
+    it 'accepts an options hash' do
+      stubbed_request = stub_request!(:get, '/actions?per_page=5&page=2')
+        .to_return(body: fixture('actions/all'), status: 200)
+      expect(action.all(per_page: 5, page: 2).actions)
+        .to include a_hash_including(status: 'in-progress')
+      expect(stubbed_request).to have_been_requested
+    end
   end
 
   describe '#show' do

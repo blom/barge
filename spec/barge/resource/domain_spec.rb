@@ -22,6 +22,14 @@ describe Barge::Resource::Domain do
       expect(domain.all.domains).to include a_hash_including('ttl' => 1800)
       expect(stubbed_request).to have_been_requested
     end
+
+    it 'accepts an options hash' do
+      stubbed_request = stub_request!(:get, '/domains?per_page=4&page=8')
+        .to_return(body: fixture('domains/all'), status: 200)
+      expect(domain.all(per_page: 4, page: 8).domains)
+        .to include a_hash_including('ttl' => 1800)
+      expect(stubbed_request).to have_been_requested
+    end
   end
 
   describe '#show' do
@@ -61,6 +69,15 @@ describe Barge::Resource::Domain do
         .to_return(body: fixture('domains/records'), status: 200)
       expect(domain.records('example.com').domain_records)
         .to include a_hash_including(data: '8.8.8.8')
+      expect(stubbed_request).to have_been_requested
+    end
+
+    it 'accepts an options hash' do
+      stubbed_request =
+        stub_request!(:get, '/domains/example.com/records?per_page=1&page=2')
+        .to_return(body: fixture('domains/records'), status: 200)
+      expect(domain.records('example.com', per_page: 1, page: 2)
+        .domain_records).to include a_hash_including(data: '8.8.8.8')
       expect(stubbed_request).to have_been_requested
     end
   end

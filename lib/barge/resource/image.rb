@@ -3,8 +3,8 @@ module Barge
     class Image
       include Resource::Base
 
-      def all
-        get('images')
+      def all(options = {})
+        get('images', options)
       end
 
       def show(image_id)

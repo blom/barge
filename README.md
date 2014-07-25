@@ -192,6 +192,12 @@ barge.droplet.kernels(droplet_id)
 barge.droplet.snapshots(droplet_id)
 ```
 
+### Create snapshot
+
+``` ruby
+barge.droplet.snapshot(droplet_id, 'image name')
+```
+
 ### Destroy droplet
 
 ``` ruby

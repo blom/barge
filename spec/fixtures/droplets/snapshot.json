@@ -1,0 +1,12 @@
+{
+    "action": {
+        "completed_at": null,
+        "id": 3636,
+        "region": "nyc1",
+        "resource_id": 36,
+        "resource_type": "droplet",
+        "started_at": "2014-07-02T16:10:22Z",
+        "status": "in-progress",
+        "type": "snapshot"
+    }
+}

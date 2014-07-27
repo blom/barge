@@ -92,6 +92,17 @@ describe Barge::Resource::Droplet do
     end
   end
 
+  describe '#snapshot' do
+    it 'create a snapshot of a droplet' do
+      stubbed_request = stub_request!(:post, '/droplets/36/actions')
+        .to_return(body: fixture('droplets/snapshot'), status: 200)
+      expect(droplet.snapshot(36, 'image_name').action.type).to eq 'snapshot'
+      expect(stubbed_request
+        .with(body: { type: :snapshot, name: :image_name }.to_json))
+        .to have_been_requested
+    end
+  end
+
   describe '#reboot' do
     it 'reboots a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/13/actions')

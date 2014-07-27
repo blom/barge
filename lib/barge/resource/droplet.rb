@@ -35,6 +35,10 @@ module Barge
         action(droplet_id, __method__, name: name)
       end
 
+      def snapshot(droplet_id, name)
+        action(droplet_id, __method__, name: name)
+      end
+
       def reboot(droplet_id)
         action(droplet_id, __method__)
       end

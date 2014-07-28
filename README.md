@@ -76,17 +76,17 @@ instead.
 
 [api-responses]: https://developers.digitalocean.com/#responses
 
-### success?
+### #success?
 
-You can use `success?` to check if a successful HTTP status code was returned:
+You can use `#success?` to check if a successful HTTP status code was returned:
 
 ``` ruby
 barge.droplet.create(options).success? # => true
 ```
 
-### response
+### #response
 
-Barge uses [Faraday][faraday]. You can use `response` to get to the response
+Barge uses [Faraday][faraday]. You can use `#response` to get to the response
 object:
 
 ``` ruby

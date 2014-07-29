@@ -55,9 +55,9 @@ can be accessed using dot notation:
 
 ``` ruby
 droplet = barge.droplet.show(droplet_id)
-droplet.droplet.name        # => "foo"
-droplet.droplet.image.id    # => 123
-droplet.droplet.size!.vcpus # => 1
+droplet.droplet.name       # => "foo"
+droplet.droplet.image.id   # => 123
+droplet.droplet.size!.slug # => "512mb"
 ```
 
 Notice that `size!` and not `size` was used. This is because `size` already is
@@ -65,8 +65,8 @@ a method, and Hashie::Mash will not override it. You can also use square
 brackets:
 
 ``` ruby
-droplet[:droplet][:size][:vcpus]    # => 1
-droplet['droplet']['size']['vcpus'] # => 1
+droplet[:droplet][:size][:slug]    # => "512mb"
+droplet['droplet']['size']['slug'] # => "512mb"
 ```
 
 See the [API documentation on responses][api-responses] if you are wondering

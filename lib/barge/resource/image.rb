@@ -19,8 +19,8 @@ module Barge
         delete("images/#{image_id}")
       end
 
-      def transfer(image_id, region)
-        action(image_id, __method__, region: region)
+      def transfer(image_id, options)
+        action(image_id, __method__, options)
       end
 
       def show_action(image_id, action_id)

@@ -31,12 +31,12 @@ module Barge
         delete("droplets/#{droplet_id}")
       end
 
-      def rename(droplet_id, name)
-        action(droplet_id, __method__, name: name)
+      def rename(droplet_id, options)
+        action(droplet_id, __method__, options)
       end
 
-      def snapshot(droplet_id, name)
-        action(droplet_id, __method__, name: name)
+      def snapshot(droplet_id, options)
+        action(droplet_id, __method__, options)
       end
 
       def reboot(droplet_id)
@@ -59,24 +59,24 @@ module Barge
         action(droplet_id, __method__)
       end
 
-      def resize(droplet_id, size)
-        action(droplet_id, __method__, size: size)
+      def resize(droplet_id, options)
+        action(droplet_id, __method__, options)
       end
 
-      def rebuild(droplet_id, image_id)
-        action(droplet_id, __method__, image: image_id)
+      def rebuild(droplet_id, options)
+        action(droplet_id, __method__, options)
       end
 
-      def restore(droplet_id, image_id)
-        action(droplet_id, __method__, image: image_id)
+      def restore(droplet_id, options)
+        action(droplet_id, __method__, options)
       end
 
       def password_reset(droplet_id)
         action(droplet_id, __method__)
       end
 
-      def change_kernel(droplet_id, kernel_id)
-        action(droplet_id, __method__, kernel: kernel_id)
+      def change_kernel(droplet_id, options)
+        action(droplet_id, __method__, options)
       end
 
       def enable_ipv6(droplet_id)

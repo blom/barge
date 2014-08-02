@@ -85,7 +85,7 @@ describe Barge::Resource::Droplet do
     it 'renames a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/12/actions')
         .to_return(body: fixture('droplets/rename'), status: 200)
-      expect(droplet.rename(12, 'new_name').action.type).to eq 'rename'
+      expect(droplet.rename(12, name: 'new_name').action.type).to eq 'rename'
       expect(stubbed_request
         .with(body: { type: :rename, name: :new_name }.to_json))
         .to have_been_requested
@@ -96,7 +96,8 @@ describe Barge::Resource::Droplet do
     it 'create a snapshot of a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/36/actions')
         .to_return(body: fixture('droplets/snapshot'), status: 200)
-      expect(droplet.snapshot(36, 'image_name').action.type).to eq 'snapshot'
+      expect(droplet.snapshot(36, name: 'image_name').action.type)
+        .to eq 'snapshot'
       expect(stubbed_request
         .with(body: { type: :snapshot, name: :image_name }.to_json))
         .to have_been_requested
@@ -157,7 +158,7 @@ describe Barge::Resource::Droplet do
     it 'resizes a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/17/actions')
         .to_return(body: fixture('droplets/resize'), status: 200)
-      expect(droplet.resize(17, '1024m').action.type).to eq 'resize'
+      expect(droplet.resize(17, size: '1024m').action.type).to eq 'resize'
       expect(stubbed_request
         .with(body: { type: :resize, size: '1024m' }.to_json))
         .to have_been_requested
@@ -168,7 +169,7 @@ describe Barge::Resource::Droplet do
     it 'rebuilds a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/18/actions')
         .to_return(body: fixture('droplets/rebuild'), status: 200)
-      expect(droplet.rebuild(18, 100).action.type).to eq 'rebuild'
+      expect(droplet.rebuild(18, image: 100).action.type).to eq 'rebuild'
       expect(stubbed_request
         .with(body: { type: :rebuild, image: 100 }.to_json))
         .to have_been_requested
@@ -179,7 +180,7 @@ describe Barge::Resource::Droplet do
     it 'restores a droplet' do
       stubbed_request = stub_request!(:post, '/droplets/19/actions')
         .to_return(body: fixture('droplets/restore'), status: 200)
-      expect(droplet.restore(19, 101).action.type).to eq 'restore'
+      expect(droplet.restore(19, image: 101).action.type).to eq 'restore'
       expect(stubbed_request
         .with(body: { type: :restore, image: 101 }.to_json))
         .to have_been_requested
@@ -200,7 +201,7 @@ describe Barge::Resource::Droplet do
     it 'changes the kernel' do
       stubbed_request = stub_request!(:post, '/droplets/219/actions')
         .to_return(body: fixture('droplets/change_kernel'), status: 200)
-      expect(droplet.change_kernel(219, 313).action)
+      expect(droplet.change_kernel(219, kernel: 313).action)
         .to include type: 'change_kernel'
       expect(stubbed_request
         .with(body: { type: :change_kernel, kernel: 313 }.to_json))

@@ -55,7 +55,7 @@ describe Barge::Resource::Image do
     it 'transfers an image to another region' do
       stubbed_request = stub_request!(:post, '/images/103/actions')
         .to_return(body: fixture('images/transfer'), status: 200)
-      expect(image.transfer(103, 'sfo1').action.type).to eq 'transfer'
+      expect(image.transfer(103, region: 'sfo1').action.type).to eq 'transfer'
       expect(stubbed_request
         .with(body: { type: :transfer, region: 'sfo1' }.to_json))
         .to have_been_requested

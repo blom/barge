@@ -195,7 +195,7 @@ barge.droplet.snapshots(droplet_id)
 ### Create snapshot
 
 ``` ruby
-barge.droplet.snapshot(droplet_id, 'image name')
+barge.droplet.snapshot(droplet_id, name: 'image name')
 ```
 
 ### Destroy droplet
@@ -207,7 +207,7 @@ barge.droplet.destroy(droplet_id)
 ### Rename droplet
 
 ``` ruby
-barge.droplet.rename(droplet_id, 'new name')
+barge.droplet.rename(droplet_id, name: 'new name')
 ```
 
 ### Reboot droplet
@@ -243,7 +243,7 @@ barge.droplet.power_on(droplet_id)
 ### Resize droplet
 
 ``` ruby
-barge.droplet.resize(droplet_id, 'size slug')
+barge.droplet.resize(droplet_id, size: 'size slug')
 ```
 
 Where *size slug* is for example `1024mb`.
@@ -251,13 +251,13 @@ Where *size slug* is for example `1024mb`.
 ### Rebuild droplet
 
 ``` ruby
-barge.droplet.rebuild(droplet_id, image_id)
+barge.droplet.rebuild(droplet_id, image: image_id)
 ```
 
 ### Restore droplet
 
 ``` ruby
-barge.droplet.restore(droplet_id, image_id)
+barge.droplet.restore(droplet_id, image: image_id)
 ```
 
 ### Reset a droplet's password
@@ -269,7 +269,7 @@ barge.droplet.password_reset(droplet_id)
 ### Change a droplet's kernel
 
 ``` ruby
-barge.droplet.change_kernel(droplet_id, kernel_id)
+barge.droplet.change_kernel(droplet_id, kernel: kernel_id)
 ```
 
 ### Enable IPv6 for a droplet
@@ -346,7 +346,7 @@ barge.image.destroy(image_id)
 ### Transfer image
 
 ``` ruby
-barge.image.transfer(image_id, 'region slug')
+barge.image.transfer(image_id, region: 'region slug')
 ```
 
 Where *region slug* is for example `sfo1`.

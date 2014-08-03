@@ -86,14 +86,15 @@ barge.droplet.create(options).success? # => true
 
 ### #response
 
-Barge uses [Faraday][faraday]. You can use `#response` to get to the response
-object:
+Barge uses [Faraday][faraday]. You can use `#response` to get to the [response
+object][faraday-response]:
 
 ``` ruby
 barge.droplet.show(droplet_id).response # => Faraday::Response
 ```
 
 [faraday]: https://github.com/lostisland/faraday
+[faraday-response]: http://rubydoc.info/gems/faraday/Faraday/Response
 
 Pagination
 ----------

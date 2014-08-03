@@ -1,4 +1,4 @@
-Unreleased - 0.10.0
+2014-08-03 - 0.10.0
 -------------------
 
 * [Use option hashes everywhere for attributes](https://github.com/boats/barge/commit/731d7b9af6a4a69d29531166b2e3c793a14b2d5d)

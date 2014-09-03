@@ -1,3 +1,5 @@
+require 'coveralls'
+
 if ENV['SIMPLECOV']
   require 'simplecov'
   SimpleCov.start { add_filter '/spec/' }

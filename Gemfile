@@ -4,7 +4,7 @@ gemspec
 gem 'coveralls', require: false
 gem 'rake'
 gem 'rspec'
-gem 'rubocop'
+gem 'rubocop', '~> 0.24.0'
 gem 'simplecov'
 gem 'webmock', require: false
 gem 'yard'

@@ -3,7 +3,7 @@ require 'faraday_middleware'
 
 module Barge
   class Client
-    attr_accessor :access_token
+    attr_accessor :access_token, :timeouts
 
     attr_reader :action
     attr_reader :domain
@@ -19,6 +19,7 @@ module Barge
 
     def initialize(options = DEFAULT_OPTIONS)
       self.access_token = options.fetch(:access_token, nil)
+      self.timeouts = options.fetch(:timeouts, TIMEOUTS)
       yield(self) if block_given?
       fail ArgumentError, 'missing access_token' unless access_token
       initialize_resources
@@ -46,8 +47,8 @@ module Barge
         f.response :mashify
         f.response :json
 
-        f.options.open_timeout = TIMEOUTS
-        f.options.timeout = TIMEOUTS
+        f.options.open_timeout = timeouts
+        f.options.timeout = timeouts
       end
     end
 

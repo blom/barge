@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Barge::Client do
   let(:token) { 'some_token' }
   let(:timeouts) { 100 }
-  let(:default_timeouts) {described_class.const_get :TIMEOUTS}
+  let(:default_timeouts) { described_class.const_get :TIMEOUTS }
 
   describe '#access_token' do
     it 'can be set using a hash' do
@@ -35,10 +35,10 @@ describe Barge::Client do
     end
 
     it 'can be set using a block' do
-      barge = described_class.new { |c| 
+      barge = described_class.new do |c| 
         c.access_token = token
         c.timeouts = timeouts
-      }
+      end
       expect(barge.timeouts).to eq(timeouts)
     end
   end

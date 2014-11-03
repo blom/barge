@@ -35,7 +35,7 @@ describe Barge::Client do
     end
 
     it 'can be set using a block' do
-      barge = described_class.new do |c| 
+      barge = described_class.new do |c|
         c.access_token = token
         c.timeouts = timeouts
       end

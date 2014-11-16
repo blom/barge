@@ -135,6 +135,15 @@ barge.image.all(per_page: 5, page: 2).next_page # => 3
 barge.image.all(per_page: 5, page: 2).last_page # => 8
 ```
 
+Account
+-------
+
+### Show account information
+
+``` ruby
+barge.account.show
+```
+
 Action
 ------
 

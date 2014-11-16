@@ -5,6 +5,7 @@ module Barge
   class Client
     attr_accessor :access_token, :timeouts
 
+    attr_reader :account
     attr_reader :action
     attr_reader :domain
     attr_reader :droplet
@@ -28,6 +29,7 @@ module Barge
     private
 
     def initialize_resources
+      @account = Resource::Account.new(faraday)
       @action  = Resource::Action.new(faraday)
       @domain  = Resource::Domain.new(faraday)
       @droplet = Resource::Droplet.new(faraday)

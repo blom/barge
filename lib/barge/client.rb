@@ -6,15 +6,6 @@ module Barge
     attr_accessor :access_token
     attr_accessor :request_options
 
-    attr_reader :account
-    attr_reader :action
-    attr_reader :domain
-    attr_reader :droplet
-    attr_reader :image
-    attr_reader :key
-    attr_reader :region
-    attr_reader :size
-
     DEFAULT_OPTIONS = {}
     DIGITAL_OCEAN_URL = 'https://api.digitalocean.com/v2'
     TIMEOUTS = 10
@@ -26,21 +17,41 @@ module Barge
         .merge(options.fetch(:request_options, {}))
       yield(self) if block_given?
       fail ArgumentError, 'missing access_token' unless access_token
-      initialize_resources
+    end
+
+    def account
+      @account ||= Resource::Account.new(faraday)
+    end
+
+    def action
+      @action ||= Resource::Action.new(faraday)
+    end
+
+    def domain
+      @domain ||= Resource::Domain.new(faraday)
+    end
+
+    def droplet
+      @droplet ||= Resource::Droplet.new(faraday)
+    end
+
+    def image
+      @image ||= Resource::Image.new(faraday)
+    end
+
+    def key
+      @key ||= Resource::Key.new(faraday)
+    end
+
+    def region
+      @region ||= Resource::Region.new(faraday)
+    end
+
+    def size
+      @size ||= Resource::Size.new(faraday)
     end
 
     private
-
-    def initialize_resources
-      @account = Resource::Account.new(faraday)
-      @action  = Resource::Action.new(faraday)
-      @domain  = Resource::Domain.new(faraday)
-      @droplet = Resource::Droplet.new(faraday)
-      @image   = Resource::Image.new(faraday)
-      @key     = Resource::Key.new(faraday)
-      @region  = Resource::Region.new(faraday)
-      @size    = Resource::Size.new(faraday)
-    end
 
     def faraday
       @faraday ||= Faraday.new faraday_options do |f|

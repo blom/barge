@@ -1,3 +1,9 @@
+Unreleased - 0.11.0
+-------------------
+
+* [Add request_options to Barge::Client](https://github.com/boats/barge/commit/a56396bbf9fd177a7159c3b9d822be685f11295a)
+* [Add account resource](https://github.com/boats/barge/commit/d1eee34ff52e141539389bac5f0d1914c3cb3c7e)
+
 2014-08-03 - 0.10.0
 -------------------
 

@@ -6,7 +6,8 @@ describe Barge::Resource::Image do
 
   describe '#all' do
     it 'lists all images' do
-      stubbed_request = stub_request!(:get, '/images')
+      stubbed_request =
+        stub_request!(:get, '/images')
         .to_return(body: fixture('images/all'), status: 200)
       expect(image.all.images)
         .to include a_hash_including(name: 'Ubuntu 13.04')
@@ -14,7 +15,8 @@ describe Barge::Resource::Image do
     end
 
     it 'accepts an options hash' do
-      stubbed_request = stub_request!(:get, '/images?per_page=20&page=10')
+      stubbed_request =
+        stub_request!(:get, '/images?per_page=20&page=10')
         .to_return(body: fixture('images/all'), status: 200)
       expect(image.all(per_page: 20, page: 10).images)
         .to include a_hash_including(name: 'Ubuntu 13.04')
@@ -24,7 +26,8 @@ describe Barge::Resource::Image do
 
   describe '#show' do
     it 'returns information about a given image' do
-      stubbed_request = stub_request!(:get, '/images/100')
+      stubbed_request =
+        stub_request!(:get, '/images/100')
         .to_return(body: fixture('images/show'), status: 200)
       expect(image.show(100).image.name).to eq 'Ubuntu 13.04'
       expect(stubbed_request).to have_been_requested
@@ -33,7 +36,8 @@ describe Barge::Resource::Image do
 
   describe '#update' do
     it 'updates an image' do
-      stubbed_request = stub_request!(:put, '/images/101')
+      stubbed_request =
+        stub_request!(:put, '/images/101')
         .to_return(body: fixture('images/update'), status: 200)
       options = { name: 'New Image Name' }
       expect(image.update(101, options).image.name).to eq 'New Image Name'
@@ -44,8 +48,8 @@ describe Barge::Resource::Image do
 
   describe '#destroy' do
     it 'destroys an image' do
-      stubbed_request = stub_request!(:delete, '/images/102')
-        .to_return(status: 200)
+      stubbed_request =
+        stub_request!(:delete, '/images/102').to_return(status: 200)
       expect(image.destroy(102).success?).to be true
       expect(stubbed_request).to have_been_requested
     end
@@ -53,7 +57,8 @@ describe Barge::Resource::Image do
 
   describe '#transfer' do
     it 'transfers an image to another region' do
-      stubbed_request = stub_request!(:post, '/images/103/actions')
+      stubbed_request =
+        stub_request!(:post, '/images/103/actions')
         .to_return(body: fixture('images/transfer'), status: 200)
       expect(image.transfer(103, region: 'sfo1').action.type).to eq 'transfer'
       expect(stubbed_request
@@ -64,7 +69,8 @@ describe Barge::Resource::Image do
 
   describe '#show_action' do
     it 'shows action information' do
-      stubbed_request = stub_request!(:get, '/images/104/actions/200')
+      stubbed_request =
+        stub_request!(:get, '/images/104/actions/200')
         .to_return(body: fixture('images/show_action'), status: 200)
       expect(image.show_action(104, 200).action.type).to eq 'transfer'
       expect(stubbed_request).to have_been_requested

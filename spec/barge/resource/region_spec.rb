@@ -6,7 +6,8 @@ describe Barge::Resource::Region do
 
   describe '#all' do
     it 'lists all regions' do
-      stubbed_request = stub_request!(:get, '/regions')
+      stubbed_request =
+        stub_request!(:get, '/regions')
         .to_return(body: fixture('regions/all'), status: 200)
       expect(region.all.regions).to include a_hash_including('slug' => 'ams1')
       expect(stubbed_request).to have_been_requested

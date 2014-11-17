@@ -6,7 +6,8 @@ describe Barge::Resource::Size do
 
   describe '#all' do
     it 'lists all sizes' do
-      stubbed_request = stub_request!(:get, '/sizes')
+      stubbed_request =
+        stub_request!(:get, '/sizes')
         .to_return(body: fixture('sizes/all'), status: 200)
       expect(size.all.sizes)
         .to include a_hash_including('price_monthly' => '5.0')

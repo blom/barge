@@ -2,17 +2,14 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'coveralls', require: false
+gem 'guard'
+gem 'guard-rspec'
 gem 'rake'
 gem 'rspec'
 gem 'rubocop', '~> 0.24.0'
 gem 'simplecov'
 gem 'webmock', require: false
 gem 'yard'
-
-if RUBY_VERSION.to_f >= 2
-  gem 'guard'
-  gem 'guard-rspec'
-end
 
 platforms :jruby do
   gem 'kramdown'

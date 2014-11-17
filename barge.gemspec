@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://github.com/boats/barge'
   spec.files       = Dir['lib/**/*.rb', '[A-Z][A-Z]*']
 
-  spec.required_ruby_version = '>= 1.9.2'
+  spec.required_ruby_version = '>= 1.9.3'
 
   spec.add_dependency 'faraday',            '~> 0.9'
   spec.add_dependency 'faraday_middleware', '~> 0.9'

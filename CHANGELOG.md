@@ -1,4 +1,4 @@
-Unreleased - 0.11.0
+2014-11-23 - 0.11.0
 -------------------
 
 * [Fix character set issue](https://github.com/boats/barge/commit/07144026bbe3702791dffcbad2675e84fc0b358f)

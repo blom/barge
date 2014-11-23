@@ -1,6 +1,8 @@
 Unreleased - 0.11.0
 -------------------
 
+* [Fix character set issue](https://github.com/boats/barge/commit/07144026bbe3702791dffcbad2675e84fc0b358f)
+* [Drop support for Ruby 1.9.2](https://github.com/boats/barge/commit/5ce2a854f023f72268677129d51615bb28874dd7)
 * [Add request_options to Barge::Client](https://github.com/boats/barge/commit/a56396bbf9fd177a7159c3b9d822be685f11295a)
 * [Add account resource](https://github.com/boats/barge/commit/d1eee34ff52e141539389bac5f0d1914c3cb3c7e)
 

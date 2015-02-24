@@ -22,6 +22,15 @@ describe Barge::Resource::Image do
         .to include a_hash_including(name: 'Ubuntu 13.04')
       expect(stubbed_request).to have_been_requested
     end
+
+    it 'allows private images' do
+      stubbed_request =
+        stub_request!(:get, '/images?per_page=200&private=true')
+        .to_return(body: fixture('images/private'), status: 200)
+      expect(image.all(private: true).images)
+        .to include a_hash_including(name: 'My application image')
+      expect(stubbed_request).to have_been_requested
+    end
   end
 
   describe '#show' do

@@ -321,6 +321,12 @@ Image
 barge.image.all
 ```
 
+## Show User Images (aka. private images)
+
+``` ruby
+barge.image.all(private: true)
+```
+
 ### Show image
 
 By ID:

@@ -10,3 +10,6 @@ Documentation:
 
 Encoding:
   Enabled: false
+
+FormatString:
+  EnforcedStyle: percent

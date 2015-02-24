@@ -3,6 +3,23 @@ require 'spec_helper'
 describe Barge::Client do
   let(:token) { 'some_token' }
 
+  describe '#logger' do
+    it 'can be set' do
+      barge = described_class.new(
+        access_token: token,
+        logger: true
+      )
+      expect(barge.logger).to eq true
+    end
+
+    it 'defaults to off' do
+      barge = described_class.new do |c|
+        c.access_token = token
+      end
+      expect(barge.logger).to eq nil
+    end
+  end
+
   describe '#access_token' do
     it 'can be set using a hash' do
       barge = described_class.new(access_token: token)

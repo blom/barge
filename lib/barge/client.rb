@@ -5,6 +5,7 @@ module Barge
   class Client
     attr_accessor :access_token
     attr_accessor :request_options
+    attr_accessor :logger
 
     DEFAULT_OPTIONS = {}
     DIGITAL_OCEAN_URL = 'https://api.digitalocean.com/v2'
@@ -12,6 +13,7 @@ module Barge
 
     def initialize(options = DEFAULT_OPTIONS)
       self.access_token = options.fetch(:access_token, nil)
+      self.logger       = options.fetch(:logger, nil)
       self.request_options =
         { open_timeout: TIMEOUTS, timeout: TIMEOUTS }
         .merge(options.fetch(:request_options, {}))
@@ -55,6 +57,8 @@ module Barge
 
     def faraday
       @faraday ||= Faraday.new faraday_options do |f|
+        f.use CustomLogger if logger_on?
+
         f.adapter :net_http
 
         f.request :json
@@ -65,6 +69,10 @@ module Barge
 
         f.options.merge! request_options
       end
+    end
+
+    def logger_on?
+      logger || !ENV['DEBUG'].nil?
     end
 
     def faraday_options

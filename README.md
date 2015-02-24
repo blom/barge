@@ -14,7 +14,7 @@ Barge
 [gemnasium]: https://gemnasium.com/blom/barge
 
 Ruby library for [version 2 of DigitalOcean's
-API](https://developers.digitalocean.com/v2/).
+API](https://developers.digitalocean.com/documentation/v2/).
 
 ### Installation
 
@@ -69,7 +69,7 @@ droplet['droplet']['size']['slug'] # => "512mb"
 See the [API documentation on responses][api-responses] if you are wondering
 why attributes are contained within a `droplet` key.
 
-[api-responses]: https://developers.digitalocean.com/#responses
+[api-responses]: https://developers.digitalocean.com/documentation/v2/#responses
 
 ### #success?
 
@@ -103,7 +103,7 @@ default (the maximum allowed by the API).
 barge.image.all(per_page: 10, page: 2)
 ```
 
-[api-links]: https://developers.digitalocean.com/#links
+[api-links]: https://developers.digitalocean.com/documentation/v2/#links
 
 ### Check if a response is paginated
 
@@ -165,7 +165,7 @@ barge.droplet.create(options)
 
 See the [API documentation][droplet-create] for options.
 
-[droplet-create]: https://developers.digitalocean.com/#create-a-new-droplet
+[droplet-create]: https://developers.digitalocean.com/documentation/v2/#create-a-new-droplet
 
 ### Show all droplets
 
@@ -343,7 +343,7 @@ barge.image.update(image_id, options)
 
 See the [API documentation][image-update] for options.
 
-[image-update]: https://developers.digitalocean.com/#update-an-image
+[image-update]: https://developers.digitalocean.com/documentation/v2/#update-an-image
 
 ### Destroy image
 
@@ -376,7 +376,7 @@ barge.domain.create(options)
 
 See the [API documentation][domain-create] for options.
 
-[domain-create]: https://developers.digitalocean.com/#create-a-new-domain
+[domain-create]: https://developers.digitalocean.com/documentation/v2/#create-a-new-domain
 
 ### Show all domains
 
@@ -404,7 +404,7 @@ barge.domain.create_record(domain_name, options)
 
 See the [API documentation][domain-create-record] for options.
 
-[domain-create-record]: https://developers.digitalocean.com/#create-a-new-domain-record
+[domain-create-record]: https://developers.digitalocean.com/documentation/v2/#create-a-new-domain-record
 
 ### Show all domain records
 
@@ -441,7 +441,7 @@ barge.key.create(options)
 
 See the [API documentation][key-create] for options.
 
-[key-create]: https://developers.digitalocean.com/#create-a-new-key
+[key-create]: https://developers.digitalocean.com/documentation/v2/#create-a-new-key
 
 ### Show all keys
 
@@ -463,7 +463,7 @@ barge.key.update(key_id_or_fingerprint, options)
 
 See the [API documentation][key-update] for options.
 
-[key-update]: https://developers.digitalocean.com/#update-a-key
+[key-update]: https://developers.digitalocean.com/documentation/v2/#update-a-key
 
 ### Destroy key
 

@@ -1,13 +1,13 @@
 Barge
 =====
 
-[![Gem Version](http://img.shields.io/gem/v/barge.svg)][gem]
-[![Build Status](http://img.shields.io/travis/boats/barge.svg)][travis]
-[![Coverage Status](http://img.shields.io/coveralls/boats/barge.svg)][coveralls]
-[![Code Climate](http://img.shields.io/codeclimate/github/boats/barge.svg)][codeclimate]
-[![Dependency Status](http://img.shields.io/gemnasium/boats/barge.svg)][gemnasium]
+[![Gem Version](https://img.shields.io/gem/v/barge.svg)][gem]
+[![Build Status](https://img.shields.io/travis/boats/barge.svg)][travis]
+[![Coverage Status](https://img.shields.io/coveralls/boats/barge.svg)][coveralls]
+[![Code Climate](https://img.shields.io/codeclimate/github/boats/barge.svg)][codeclimate]
+[![Dependency Status](https://img.shields.io/gemnasium/boats/barge.svg)][gemnasium]
 
-[gem]: http://rubygems.org/gems/barge
+[gem]: https://rubygems.org/gems/barge
 [travis]: https://travis-ci.org/boats/barge
 [coveralls]: https://coveralls.io/r/boats/barge
 [codeclimate]: https://codeclimate.com/github/boats/barge

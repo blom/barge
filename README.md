@@ -2,7 +2,7 @@ Barge
 =====
 
 [![Gem Version](https://img.shields.io/gem/v/barge.svg)][gem]
-[![Build Status](https://img.shields.io/travis/boats/barge.svg)][travis]
+[![Build Status](https://img.shields.io/travis/boats/barge/master.svg)][travis]
 [![Coverage Status](https://img.shields.io/coveralls/boats/barge.svg)][coveralls]
 [![Code Climate](https://img.shields.io/codeclimate/github/boats/barge.svg)][codeclimate]
 [![Dependency Status](https://img.shields.io/gemnasium/boats/barge.svg)][gemnasium]

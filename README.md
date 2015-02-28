@@ -319,12 +319,9 @@ Image
 
 ``` ruby
 barge.image.all
-```
-
-## Show User Images (aka. private images)
-
-``` ruby
 barge.image.all(private: true)
+barge.image.all(type: :application)
+barge.image.all(type: :distribution)
 ```
 
 ### Show image

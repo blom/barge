@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.license     = 'MIT'
   spec.authors     = ['Ørjan Blom']
   spec.email       = %w(blom@blom.tv)
-  spec.homepage    = 'https://github.com/boats/barge'
+  spec.homepage    = 'https://github.com/blom/barge'
   spec.files       = Dir['lib/**/*.rb', '[A-Z][A-Z]*']
 
   spec.required_ruby_version = '>= 1.9.3'

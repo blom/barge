@@ -2,16 +2,16 @@ Barge
 =====
 
 [![Gem Version](https://img.shields.io/gem/v/barge.svg)][gem]
-[![Build Status](https://img.shields.io/travis/boats/barge/master.svg)][travis]
-[![Coverage Status](https://img.shields.io/coveralls/boats/barge.svg)][coveralls]
-[![Code Climate](https://img.shields.io/codeclimate/github/boats/barge.svg)][codeclimate]
-[![Dependency Status](https://img.shields.io/gemnasium/boats/barge.svg)][gemnasium]
+[![Build Status](https://img.shields.io/travis/blom/barge/master.svg)][travis]
+[![Coverage Status](https://img.shields.io/coveralls/blom/barge.svg)][coveralls]
+[![Code Climate](https://img.shields.io/codeclimate/github/blom/barge.svg)][codeclimate]
+[![Dependency Status](https://img.shields.io/gemnasium/blom/barge.svg)][gemnasium]
 
 [gem]: https://rubygems.org/gems/barge
-[travis]: https://travis-ci.org/boats/barge
-[coveralls]: https://coveralls.io/r/boats/barge
-[codeclimate]: https://codeclimate.com/github/boats/barge
-[gemnasium]: https://gemnasium.com/boats/barge
+[travis]: https://travis-ci.org/blom/barge
+[coveralls]: https://coveralls.io/r/blom/barge
+[codeclimate]: https://codeclimate.com/github/blom/barge
+[gemnasium]: https://gemnasium.com/blom/barge
 
 Ruby library for [version 2 of DigitalOcean's
 API](https://developers.digitalocean.com/v2/).

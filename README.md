@@ -16,9 +16,6 @@ Barge
 Ruby library for [version 2 of DigitalOcean's
 API](https://developers.digitalocean.com/v2/).
 
-**Please note that version 2 of DigitalOcean's API is in beta, and is still
-being developed. Everything is subject to change.**
-
 ### Installation
 
 ``` sh

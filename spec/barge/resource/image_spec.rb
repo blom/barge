@@ -16,19 +16,10 @@ describe Barge::Resource::Image do
 
     it 'accepts an options hash' do
       stubbed_request =
-        stub_request!(:get, '/images?per_page=20&page=10')
+        stub_request!(:get, '/images?per_page=20&page=10&private=true')
         .to_return(body: fixture('images/all'), status: 200)
-      expect(image.all(per_page: 20, page: 10).images)
+      expect(image.all(per_page: 20, page: 10, private: true).images)
         .to include a_hash_including(name: 'Ubuntu 13.04')
-      expect(stubbed_request).to have_been_requested
-    end
-
-    it 'allows private images' do
-      stubbed_request =
-        stub_request!(:get, '/images?per_page=200&private=true')
-        .to_return(body: fixture('images/private'), status: 200)
-      expect(image.all(private: true).images)
-        .to include a_hash_including(name: 'My application image')
       expect(stubbed_request).to have_been_requested
     end
   end

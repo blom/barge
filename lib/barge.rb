@@ -1,5 +1,6 @@
 require 'hashie'
 
+require 'barge/custom_logger'
 require 'barge/client'
 require 'barge/resource'
 require 'barge/response'

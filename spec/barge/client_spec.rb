@@ -90,4 +90,11 @@ describe Barge::Client do
       expect(barge.send(:faraday).options.timeout).to be 200
     end
   end
+
+  describe '#faraday' do
+    it 'is a Faraday::Connection object' do
+      barge = described_class.new(access_token: token)
+      expect(barge.faraday).to be_a Faraday::Connection
+    end
+  end
 end

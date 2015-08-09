@@ -51,8 +51,6 @@ module Barge
       @size ||= Resource::Size.new(faraday)
     end
 
-    private
-
     def faraday
       @faraday ||= Faraday.new faraday_options do |f|
         f.adapter :net_http
@@ -66,6 +64,8 @@ module Barge
         f.options.merge! request_options
       end
     end
+
+    private
 
     def faraday_options
       {

@@ -1,3 +1,8 @@
+Unreleased - 0.12.0
+-------------------
+
+* [Make #faraday public](https://github.com/blom/barge/commit/660dd56ea4ad71d7d62a86ee442d87c77a3f712a)
+
 2014-11-23 - 0.11.0
 -------------------
 

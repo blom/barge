@@ -1,6 +1,7 @@
 Unreleased - 0.12.0
 -------------------
 
+* [Add floating_ip resource](https://github.com/blom/barge/commit/fd5f960b17ae1509ba697616c6a7c9d2e544807a)
 * [Make #faraday public](https://github.com/blom/barge/commit/660dd56ea4ad71d7d62a86ee442d87c77a3f712a)
 
 2014-11-23 - 0.11.0

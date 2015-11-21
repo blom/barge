@@ -490,3 +490,43 @@ Size
 ``` ruby
 barge.size.all
 ```
+
+Floating IP
+-----------
+
+### Show all floating IPs
+
+``` ruby
+barge.floating_ip.all
+```
+
+### Create floating IP
+
+``` ruby
+barge.floating_ip.create(droplet_id: droplet_id)
+barge.floating_ip.create(region: region)
+```
+
+### Show floating IP
+
+``` ruby
+barge.floating_ip.show(ip_address)
+```
+
+### Destroy floating IP
+
+``` ruby
+barge.floating_ip.destroy(ip_address)
+```
+
+### Assign a floating IP to a droplet
+
+``` ruby
+barge.floating_ip.assign(ip_address, droplet_id: droplet_id)
+```
+
+### Unassign a floating IP
+
+``` ruby
+barge.floating_ip.unassign(ip_address)
+```

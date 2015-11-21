@@ -1,0 +1,29 @@
+{
+    "floating_ip": {
+        "droplet": null,
+        "ip": "10.20.30.40",
+        "locked": false,
+        "region": {
+            "available": true,
+            "features": [
+                "private_networking",
+                "backups",
+                "ipv6",
+                "metadata"
+            ],
+            "name": "New York 3",
+            "sizes": [
+                "512mb",
+                "1gb",
+                "2gb",
+                "4gb",
+                "8gb",
+                "16gb",
+                "32gb",
+                "48gb",
+                "64gb"
+            ],
+            "slug": "nyc3"
+        }
+    }
+}

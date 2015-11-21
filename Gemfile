@@ -6,7 +6,7 @@ gem 'guard'
 gem 'guard-rspec'
 gem 'rake'
 gem 'rspec'
-gem 'rubocop'
+gem 'rubocop', '~> 0.34.0'
 gem 'simplecov'
 gem 'webmock', require: false
 gem 'yard'

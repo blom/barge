@@ -22,8 +22,8 @@ API](https://developers.digitalocean.com/v2/).
 gem install barge
 ```
 
-Ruby 1.9 and up is required. See the [.travis.yml](.travis.yml) file for a list
-of supported rubies.
+Ruby 1.9.3 and up is required. See the [.travis.yml](.travis.yml) file for a
+list of supported rubies.
 
 ### Initialize
 

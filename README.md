@@ -67,9 +67,7 @@ droplet['droplet']['size']['slug'] # => "512mb"
 ```
 
 See the [API documentation on responses][api-responses] if you are wondering
-why attributes are contained within a `droplet` key. This might change when
-pagination is fully implemented so you can say for instance `droplet.name`
-instead.
+why attributes are contained within a `droplet` key.
 
 [api-responses]: https://developers.digitalocean.com/#responses
 

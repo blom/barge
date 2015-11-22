@@ -1,4 +1,4 @@
-Unreleased - 0.12.0
+2015-11-22 - 0.12.0
 -------------------
 
 * [Add floating_ip resource](https://github.com/blom/barge/commit/fd5f960b17ae1509ba697616c6a7c9d2e544807a)

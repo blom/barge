@@ -6,7 +6,9 @@ rvm:
   - 2.2
   - jruby
   - rbx-2
+  - ruby-head
 matrix:
   allow_failures:
     - rvm: rbx-2
+    - rvm: ruby-head
   fast_finish: true

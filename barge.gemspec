@@ -10,7 +10,10 @@ Gem::Specification.new do |spec|
   spec.authors     = ['Ørjan Blom']
   spec.email       = %w(blom@blom.tv)
   spec.homepage    = 'https://github.com/blom/barge'
-  spec.files       = Dir['lib/**/*.rb', '[A-Z][A-Z]*']
+
+  spec.files = `git ls-files -z`.split("\x0").keep_if do |file|
+    file.match(/\A(lib|[A-Z]{2})/)
+  end
 
   spec.required_ruby_version = '>= 1.9.3'
 

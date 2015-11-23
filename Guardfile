@@ -1,4 +1,4 @@
-guard :rspec do
+guard :rspec, cmd: 'bundle exec rspec' do
   watch(%r{\Aspec/.+_spec\.rb\z})
   watch(%r{\Alib/(.+)\.rb\z}) { |_, match| "spec/#{match}_spec.rb" }
   watch('spec/spec_helper.rb') { 'spec' }

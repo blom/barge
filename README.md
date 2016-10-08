@@ -489,6 +489,29 @@ Size
 barge.size.all
 ```
 
+Snapshot
+---
+
+### Show all snapshots
+
+``` ruby
+barge.snapshot.all
+barge.snapshot.all(resource_type: :droplet)
+barge.snapshot.all(resource_type: :volume)
+```
+
+### Show Snapshot
+
+``` ruby
+barge.key.show(snapshot_id)
+```
+
+### Destroy Snapshot
+
+``` ruby
+barge.snapshot.destroy(snapshot_id)
+```
+
 Floating IP
 -----------
 

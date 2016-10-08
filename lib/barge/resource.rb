@@ -9,6 +9,7 @@ require 'barge/resource/image'
 require 'barge/resource/key'
 require 'barge/resource/region'
 require 'barge/resource/size'
+require 'barge/resource/snapshot'
 
 module Barge
   module Resource

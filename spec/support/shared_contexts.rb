@@ -10,4 +10,5 @@ shared_context 'resource' do
   let(:key) { barge.key }
   let(:region) { barge.region }
   let(:size) { barge.size }
+  let(:snapshot) { barge.snapshot }
 end

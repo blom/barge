@@ -51,6 +51,10 @@ module Barge
       @size ||= Resource::Size.new(faraday)
     end
 
+    def snapshot
+      @snapshot ||= Resource::Snapshot.new(faraday)
+    end
+
     def floating_ip
       @floating_ip ||= Resource::FloatingIP.new(faraday)
     end

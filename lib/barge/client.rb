@@ -6,8 +6,8 @@ module Barge
     attr_accessor :access_token
     attr_accessor :request_options
 
-    DEFAULT_OPTIONS = {}
-    DIGITAL_OCEAN_URL = 'https://api.digitalocean.com/v2'
+    DEFAULT_OPTIONS = {}.freeze
+    DIGITAL_OCEAN_URL = 'https://api.digitalocean.com/v2'.freeze
     TIMEOUTS = 10
 
     def initialize(options = DEFAULT_OPTIONS)
@@ -16,7 +16,7 @@ module Barge
         { open_timeout: TIMEOUTS, timeout: TIMEOUTS }
         .merge(options.fetch(:request_options, {}))
       yield(self) if block_given?
-      fail ArgumentError, 'missing access_token' unless access_token
+      raise ArgumentError, 'missing access_token' unless access_token
     end
 
     def account

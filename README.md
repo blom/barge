@@ -528,3 +528,36 @@ barge.floating_ip.assign(ip_address, droplet_id: droplet_id)
 ``` ruby
 barge.floating_ip.unassign(ip_address)
 ```
+
+Volume (aka Block Storage)
+-----------
+
+### Show all volumes
+
+``` ruby
+barge.volume.all
+barge.volume.all(region: 'nyc1')
+```
+
+### Create volume
+
+``` ruby
+barge.volume.create(
+  size_gigabytes: 10,
+  name: "Example",
+  description: "Block store for examples",
+  region: "nyc1"
+)
+```
+
+### Show volume
+
+``` ruby
+barge.volume.show(volume_id)
+```
+
+### Destroy volume
+
+``` ruby
+barge.volume.destroy(volume_id)
+```

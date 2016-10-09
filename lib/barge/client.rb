@@ -55,6 +55,10 @@ module Barge
       @floating_ip ||= Resource::FloatingIP.new(faraday)
     end
 
+    def volume
+      @volume ||= Resource::Volume.new(faraday)
+    end
+
     def faraday
       @faraday ||= Faraday.new faraday_options do |f|
         f.adapter :net_http

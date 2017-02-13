@@ -1,6 +1,14 @@
+require 'coveralls'
+
 if ENV['SIMPLECOV']
   require 'simplecov'
-  SimpleCov.start { add_filter '/spec/' }
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
+  SimpleCov.start do
+    coverage_dir('coverage/')
+  end
 elsif ENV['TRAVIS'] && RUBY_ENGINE == 'ruby'
   require 'coveralls'
   Coveralls.wear! { add_filter '/spec/' }

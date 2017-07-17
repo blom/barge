@@ -285,4 +285,15 @@ describe Barge::Resource::Droplet do
       expect(stubbed_request).to have_been_requested
     end
   end
+
+  describe '#enable_backups' do
+    it 'enables backups' do
+      stubbed_request =
+        stub_request!(:post, '/droplets/221/actions')
+        .to_return(body: fixture('droplets/enable_backups'), status: 200)
+      expect(droplet.enable_backups(221).action.type).to eq 'enable_backups'
+      expect(stubbed_request.with(body: { type: :enable_backups }.to_json))
+        .to have_been_requested
+    end
+  end
 end

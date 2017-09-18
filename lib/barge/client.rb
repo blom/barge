@@ -57,8 +57,6 @@ module Barge
 
     def faraday
       @faraday ||= Faraday.new faraday_options do |f|
-        f.adapter :net_http
-
         f.request :json
 
         f.response :follow_redirects
@@ -66,6 +64,8 @@ module Barge
         f.response :json
 
         f.options.merge! request_options
+
+        f.adapter :net_http
       end
     end
 
